@@ -1,0 +1,32 @@
+/*
+*
+* ==========================================
+* CUSTOM UTIL CLASSES
+* ==========================================
+*
+*/
+
+
+
+
+
+
+
+
+
+
+body {
+    background: #eaafc8;
+    background: -webkit-linear-gradient(to right, #eaafc8, #654ea3);
+    background: linear-gradient(to right, #eaafc8, #654ea3);
+    min-height: 100vh;
+  }
+
+
+
+
+
+.text-small {
+    font-size: 0.9rem !important;
+}
+

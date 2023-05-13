@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Web donde encontrarás ejercicios resueltos del curso de Desarrollo de aplicaciones Web">
+  <meta name="keywords"
+    content="Fran Cobos Gracia, Fran Cobos, Fran, VirtualBox, Windows Server 2019, Directivas Seguridad Local">
+  <meta name="author" content="Fran Cobos Gracia">
+  <meta name="robots" content="index, follow">
+
+  <title>Instalación y configuración de Windows Server 2019</title>
+  <link rel='icon' href='../../../src/img/favicon.png' />
+  <link rel='stylesheet' href='src/css/styles.css' />
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-scroll">
+    <div class="container">
+      <img src="../../../src/img/nav.png" alt="" width="200px" height="20px">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item ">
+            <a class="nav-link" href="https://francobosg.github.io/">Home</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="https://francobosg.github.io/sobre-mi/" rel="nofollow">Sobre mí</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+  <section class="container">
+    <article class="pt-5 text-white">
+      <header class="py-5 mt-5">
+        <h1 class="display-4">Instalación y
+          configuración de
+          Windows Server 2019</h1>
+
+      </header>
+
+      <div class="py-5">
+        <h2>1.- Creación de la MV (máquina virtual).</h2>
+        <p class="lead ">Dentro del software de virtualización crearemos una máquina virtual llamada
+          "Server2019- fjcg2122" ,destinada a la instalación del sistema Windows Server 2019
+          cuya versión de evaluación en formato ISO se puede descargar del siguiente enlace.
+          Asigna los siguientes recursos hardware a la MV:
+        </p>
+        <p class="lead">Una vez descargada la iso de Windows Server 2019, nos dirigiremos a nuestra máquina
+          virtual y le añadimos estas características:</p>
+        </p>
+        <p class="lead">• Un único disco duro virtual con 100 GB de capacidad. </p>
+        <p class="lead">• Memoria RAM: 2 GB al menos si tu equipo tiene 4 GB (si tienes más RAM, puedes
+          utilizar más en la MV, se recomienda usar 4 GB en la MV si tienes 8 GB o más en tu
+          máquina anfitriona).</p>
+        <br>
+        <p class="lead">Seguimos los siguientes pasos:</p>
+
+        <img class="img-fluid mb-5" src="src/img/1.JPG" alt="">
+
+        <br>
+
+
+        <p class="lead">Añadimos el tamaño de memoria según tu equipo puede soportarlas.</p>
+        <img class="img-fluid  mb-5" src="src/img/2.JPG" alt="">
+        <br>
+        <img class="img-fluid  mb-5" src="src/img/3.JPG" alt="">
+        <br>
+        <img class="img-fluid  mb-5" src="src/img/4.JPG" alt="">
+        <br>
+        <img class="img-fluid  mb-5" src="src/img/5.JPG" alt="">
+
+        <p class="lead">Ingresamos un tamaño de 100GB para nuestra máquina virtual.</p>
+        <img class="img-fluid  mb-5" src="src/img/6.JPG" alt="">
+
+        <p class="lead">Ya tenemos creada la máquina virtual, le damos a Iniciar</p>
+        <img class="img-fluid  mb-5" src="src/img/7.JPG" alt="">
+
+        <h2>2.- Instalación de Windows Server 2019.</h2>
+
+        <p class="lead">nstala Windows Server 2019 teniendo en cuenta que durante su instalación tendrás
+          que realizar operaciones relativas al particionado del disco duro virtual creando dos
+          particiones: una partición de 80 GB donde se instalará el sistema y una partición de 20
+          GB que se utilizará para datos
+        </p>
+        <p class="lead">Añadimos la ISO de Windows Server 2019</p>
+        <img class="img-fluid  mb-5" src="src/img/8.JPG" alt="">
+        <br>
+        <img class="img-fluid  mb-5" src="src/img/9.JPG" alt="">
+        <br>
+        <img class="img-fluid  mb-5" src="src/img/10.JPG" alt="">
+
+        <p class="lead">Escogemos una versión para instalar (La segunda para tener entorno gráfico)</p>
+        <img class="img-fluid  mb-5" src="src/img/11.JPG" alt="">
+
+        <p class="lead">Aceptamos los términos de licencia
+        </p>
+        <img class="img-fluid  mb-5" src="src/img/12.JPG" alt="">
+
+        <p class="lead">Elegimos la opción personalizada para realizar las particiones siguientes:
+        </p>
+        <img class="img-fluid  mb-5" src="src/img/13.JPG" alt="">
+
+        <p class="lead">Le damos a nuevo para crear una particion</p>
+        <img class="img-fluid  mb-5" src="src/img/14.JPG" alt="">
+
+        <p class="lead">Introducimos 80GB (80000MB) una partición de 80 GB donde se instalará el sistema y
+          una partición de 20 GB que se utilizará para datos</p>
+        <img class="img-fluid  mb-5" src="src/img/15.JPG" alt="">
+
+        <p class="lead">Aceptamos</p>
+        <img class="img-fluid  mb-5" src="src/img/16.JPG" alt="">
+
+
+
+        <p class="lead">Podemos observar que las particiones se han creado correctamente
+        </p>
+        <img class="img-fluid  mb-5" src="src/img/17.JPG" alt="">
+
+        <p class="lead">Ya comenzará con la instalación de Windows Server 2019
+        </p>
+        <img class="img-fluid  mb-5" src="src/img/18.JPG" alt="">
+
+        <p class="lead">Como clave al usuario Administrador puedes ponerle Ab_12345.</p>
+        <img class="img-fluid  mb-5" src="src/img/19.JPG" alt="">
+
+        <h2>3.- Configuración inicial del servidor.
+        </h2>
+
+        <p class="lead">1.- Configurar las funciones de red. Abre una consola ejecutando CMD y
+          comprueba ejecutando ipconfig /all la configuración de red actual de la máquina
+          virtual. </p>
+        <img class="img-fluid  mb-5" src="src/img/20.JPG" alt="">
+
+        <p class="lead">Apaga el servidor y accede en VirtualBox a Máquina
+        </p>
+        <p class="lead"> Configuración… y elige Red. Observarás que, si no has cambiado el modo de
+          funcionamiento de la tarjeta de red, esta se encuentra en modo NAT. En dicha pantalla,
+          elige “Conectado a: Adaptador Puente”.</p>
+        <img class="img-fluid  mb-5" src="src/img/21.JPG" alt="">
+
+
+        <p class="lead">Arranca la máquina virtual y vuelve a ejecutar CMD e ipconfig /all para comprobar la
+          configuración de red. Observarás que ha cambiado y que has obtenido una dirección IP
+          dentro de la red creada por el router al que está conectado la máquina física.
+          Probablemente tu IP sea del tipo 192.168.0.x o 192.168.1.x.</p>
+        <img class="img-fluid  mb-5" src="src/img/22.JPG" alt="">
+
+        <p class="lead">Observando dicha configuración, vamos a hacer que la dirección IP del servidor sea
+          estática y vamos a asignarle los mismos valores que nos ha dado el servidor DHCP de
+          nuestra red física</p>
+        <p class="lead">Para ello realizamos los siguientes pasos:
+        </p>
+        <p class="lead">En el menú de contexto que aparece, elegimos Abrir el Centro de redes y recursos
+          compartidos. (Hacer click derecho sobre el icono marcado)</p>
+        <img class="img-fluid  mb-5" src="src/img/23.JPG" alt="">
+
+        <p class="lead">En el apardado Ethernet le damos click sobre Cambiar opciones del adaptador
+        </p>
+        <img class="img-fluid  mb-5" src="src/img/24.JPG" alt="">
+
+        <p class="lead">Hacemos click derecho sobre Ethernet, Propiedades</p>
+        <img class="img-fluid  mb-5" src="src/img/25.JPG" alt="">
+        <br>
+        <img class="img-fluid  mb-5" src="src/img/26.JPG" alt="">
+
+        <p class="lead">Añadimos una dirección estática</p>
+        <img class="img-fluid  mb-5" src="src/img/27.JPG" alt="">
+
+        <p class="lead">2.- Asignar un nombre representativo al servidor.
+        </p>
+
+        <p class="lead">Debes cambiar el nombre del servidor para que sea server2019-iniciales del alumno
+        </p>
+        <p class="lead">Para ello nos vamos al explorador de archivos, hacemos click derecho sobre Este
+          equipo, Propiedades.</p>
+        <img class="img-fluid  mb-5" src="src/img/28.JPG" alt="">
+
+        <p class="lead">Le damos a Cambiar configuración</p>
+        <img class="img-fluid  mb-5" src="src/img/29.JPG" alt="">
+
+        <p class="lead">Podemos observar el nombre completo del equipo, le damos a Cambiar…
+        </p>
+        <img class="img-fluid  mb-5" src="src/img/30.JPG" alt="">
+
+        <p class="lead">Introducimos un nombre para el equipo y aceptamos</p>
+        <img class="img-fluid  mb-5" src="src/img/31.JPG" alt="">
+
+        <p class="lead">Para observar los cambios debemos reiniciar la máquina
+        </p>
+        <img class="img-fluid  mb-5" src="src/img/32.JPG" alt="">
+
+
+
+      </div>
+
+    </article>
+  </section>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script>
+    window.addEventListener('scroll', function () {
+      const navbar = document.querySelector('.bg-scroll');
+      navbar.classList.toggle('scrolled', window.scrollY > 0);
+    });
+  </script>
+</body>
+
+</html>
