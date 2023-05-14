@@ -209,6 +209,42 @@
     </article>
   </section>
 
+    <div class="cookie-banner">
+    <p>Utilizamos cookies propias y de terceros para mejorar la experiencia del usuario. Si continúa navegando,
+      consideramos que acepta su uso. <a href="https://policies.google.com/">Más información</a></p>
+    <button id="accept-cookies">Aceptar</button>
+    <button id="reject-cookies">Rechazar</button>
+    <a href="https://francobosg.github.io/politica-cookies/"><button id="read-more">Leer más</button></a>
+
+  </div>
+
+  <script>
+    const cookieBanner = document.querySelector('.cookie-banner');
+    const acceptBtn = document.querySelector('#accept-cookies');
+    const rejectBtn = document.querySelector('#reject-cookies');
+    const readMoreBtn = document.querySelector('#read-more');
+
+    function hideCookieBanner() {
+      localStorage.setItem('cookieConsent', 'true');
+      cookieBanner.style.display = 'none';
+    }
+
+    function rejectCookies() {
+      localStorage.setItem('cookieConsent', 'false');
+      cookieBanner.style.display = 'none';
+    }
+
+    acceptBtn.addEventListener('click', hideCookieBanner);
+
+
+    rejectBtn.addEventListener('click', rejectCookies);
+
+    if (localStorage.getItem('cookieConsent') === 'true') {
+      cookieBanner.style.display = 'none';
+    }
+  </script>
+
+  
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
