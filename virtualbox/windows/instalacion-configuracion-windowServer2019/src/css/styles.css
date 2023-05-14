@@ -16,8 +16,8 @@
 
 body {
     background: #eaafc8;
-    background: -webkit-linear-gradient(to right, #eaafc8, #654ea3);
-    background: linear-gradient(to right, #eaafc8, #654ea3);
+    background: -webkit-linear-gradient(to right, #9c6c80, #48357c);
+    background: linear-gradient(to right, #9c6c80, #48357c);
     min-height: 100vh;
   }
 
