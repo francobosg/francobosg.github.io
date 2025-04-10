@@ -1,70 +1,97 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  
- .cookie-banner {
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #f0f4f8, #d9e2ec);
+  color: #333;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* Container centralizado */
+.container-fluid {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+/* Títulos y textos */
+.text-uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.lead {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+/* Código */
+code {
+  color: #5a3ec8;
+  background: #f1f1f1;
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.3rem;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Lista de navegación */
+li > a {
+  text-decoration: none;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+li > a:hover {
+  color: #1f2937;
+}
+
+/* Cookie banner moderno */
+.cookie-banner {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #f5f5f5;
-  padding: 10px;
+  background-color: #1f2937;
+  padding: 15px 20px;
   text-align: center;
+  color: #fff;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 999;
 }
 
 .cookie-banner p {
   margin: 0;
   font-size: 14px;
-  line-height: 1.5;
 }
 
 .cookie-banner a {
-  color: #eaafc8;
-}
-.cookie-banner button:hover {
-  color: rgb(143, 20, 71);
+  color: #93c5fd;
+  text-decoration: underline;
 }
 
 .cookie-banner button {
-  background-color: #eaafc8;
+  background-color: #3b82f6;
   border: none;
-  color: #fff;
-  padding: 10px;
+  color: white;
+  padding: 8px 14px;
   font-size: 14px;
   cursor: pointer;
+  border-radius: 4px;
+  margin-left: 10px;
+  transition: background-color 0.3s ease;
 }
 
-  body {
-    background: #eaafc8;
-    background: -webkit-linear-gradient(to right, #9c6c80, #48357c);
-    background: linear-gradient(to right, #9c6c80, #48357c);
-    min-height: 100vh;
-  }
-  
-  code {
-    color: #745eb1;
-    background: #fff;
-    padding: 0.1rem 0.2rem;
-    border-radius: 0.2rem;
-  }
-  
-  .text-uppercase {
-    letter-spacing: 0.08em;
-  }
-  .container-fluid {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-  }
-  .lead {
-font-size: 1.25rem;
-font-weight: 600;
-line-height: 1.5;
-}
-li > a{
-    text-decoration: none;
-    color: white;
-}
-li > a:hover{
-  color: black;
+.cookie-banner button:hover {
+  background-color: #2563eb;
 }
