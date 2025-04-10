@@ -32,7 +32,7 @@ body {
 .lead {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #1f2937;
+  color: #333; /* Cambié el color a un tono más oscuro */
   margin-bottom: 1rem;
 }
 
@@ -62,7 +62,7 @@ li > a:hover {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #1f2937;
+  background-color: #1f2937; /* Fondo oscuro para más contraste */
   padding: 15px 20px;
   text-align: center;
   color: #fff;
@@ -76,7 +76,7 @@ li > a:hover {
 }
 
 .cookie-banner a {
-  color: #93c5fd;
+  color: #93c5fd; /* Azul claro */
   text-decoration: underline;
 }
 
@@ -94,4 +94,14 @@ li > a:hover {
 
 .cookie-banner button:hover {
   background-color: #2563eb;
+}
+
+/* Mejorar contraste de los enlaces del navbar */
+.navbar-nav .nav-link {
+  color: #fff !important; /* Asegúrate de que los enlaces sean blancos */
+  font-weight: 600;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #1f2937 !important; /* Contraste al pasar el mouse */
 }
