@@ -13,6 +13,9 @@ body {
   line-height: 1.6;
   padding-top: 120px; /* Para evitar que el navbar cubra el contenido */
 }
+a{
+  color: #1f2937;
+}
 
 /* Títulos y textos */
 .text-uppercase {
@@ -47,7 +50,7 @@ code {
 }
 
 .navbar-nav .nav-item .nav-link {
-  color: #2e3b4e !important;
+  color: #fff !important;
   font-weight: 500;
   text-transform: uppercase;
   padding: 12px 20px;
@@ -114,7 +117,4 @@ code {
 
 .cookie-banner button:hover {
   background-color: #2563eb;
-}
-a{
-  color: #2e3b4e ;
 }
