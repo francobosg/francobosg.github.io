@@ -47,7 +47,7 @@ code {
 }
 
 .navbar-nav .nav-item .nav-link {
-  color: #fff !important;
+  color: #2e3b4e !important;
   font-weight: 500;
   text-transform: uppercase;
   padding: 12px 20px;
@@ -114,4 +114,7 @@ code {
 
 .cookie-banner button:hover {
   background-color: #2563eb;
+}
+a{
+  color: #2e3b4e ;
 }
