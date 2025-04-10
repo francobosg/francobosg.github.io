@@ -18,6 +18,11 @@ body {
 a {
   color: #1f2937;
   text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #3b82f6; /* Nuevo color azul más sutil */
 }
 
 /* Animaciones generales */
@@ -159,7 +164,7 @@ section {
 
 /* Adding smooth hover effects for interactive elements */
 a:hover, .navbar-nav .nav-link:hover, .cookie-banner a:hover {
-  color: #93c5fd;
+  color: #3b82f6;
   text-decoration: underline;
   transition: color 0.3s ease;
 }
@@ -169,6 +174,8 @@ button {
   border-radius: 5px;
   padding: 12px 24px;
   font-size: 1rem;
+  background-color: #3b82f6; /* Color más adecuado */
+  color: white;
   transition: all 0.3s ease;
 }
 
@@ -185,4 +192,3 @@ section .text-white, .lead, h1, h2, p {
 section .text-left, ul {
   color: #333 !important;
 }
-
