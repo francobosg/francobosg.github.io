@@ -177,3 +177,12 @@ button:hover {
   transform: scale(1.05);
 }
 
+/* Mejorar visibilidad de textos en secciones con fondo claro */
+section .text-white, .lead, h1, h2, p {
+  color: #333 !important; /* Asegura que el texto sea visible sobre el fondo claro */
+}
+
+section .text-left, ul {
+  color: #333 !important;
+}
+
