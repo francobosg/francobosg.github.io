@@ -12,6 +12,7 @@
   <title>Formulario de Contacto</title>
   <link rel='icon' href='src/img/favicon.png' />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel='stylesheet' href='src/css/styles.css' /> <!-- Si tienes un archivo de estilos propio -->
 </head>
 
 <body>
@@ -26,13 +27,13 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
+            <li class="nav-item">
               <a class="nav-link" href="https://francobosg.github.io/">Inicio</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="https://francobosg.github.io/sobre-mi/">Sobre mí</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
               <a class="nav-link" href="https://francobosg.github.io/contacto/">Contacto</a>
             </li>
           </ul>
@@ -41,26 +42,31 @@
     </nav>
   </header>
 
-  <section class="container py-5">
+  <section class="container pt-5">
     <article id="contacto" class="py-5">
-      <h2 class="text-center mb-4">Formulario de Contacto</h2>
-      <form action="https://formspree.io/f/mzzeyjvb" method="POST">
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="nombre">Nombre</label>
-            <input type="text" class="form-control" id="nombre" name="nombre" required>
+      <div class="py-5 text-white mt-5">
+        <h1 class="display-4 text-center">Formulario de Contacto</h1>
+      </div>
+
+      <div class="py-5">
+        <form action="https://formspree.io/f/mzzeyjvb" method="POST">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="nombre" class="text-white">Nombre</label>
+              <input type="text" class="form-control" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="email" class="text-white">Correo electrónico</label>
+              <input type="email" class="form-control" id="email" name="_replyto" required>
+            </div>
           </div>
-          <div class="form-group col-md-6">
-            <label for="email">Correo electrónico</label>
-            <input type="email" class="form-control" id="email" name="_replyto" required>
+          <div class="form-group">
+            <label for="mensaje" class="text-white">Mensaje</label>
+            <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required></textarea>
           </div>
-        </div>
-        <div class="form-group">
-          <label for="mensaje">Mensaje</label>
-          <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Enviar</button>
-      </form>
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+      </div>
     </article>
   </section>
 
