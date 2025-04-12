@@ -167,6 +167,21 @@ header ul a{
 
 }
 
+.gradient{
+    background: linear-gradient(to right, #218eb9, #7c1380, #8b1696, #202c88, #3248f0,#1285a1);
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate-gradient 2.5s linear infinite;
+}
+
+@keyframes animate-gradient{
+    to{
+        background-position: 200%;
+    }
+}
+
 
 
 
