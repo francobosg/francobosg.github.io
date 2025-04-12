@@ -183,8 +183,25 @@ header ul a{
 }
 
 
+.hero-vid-box{
+    position: absolute;
+    right: 3%;
+
+}
 
 
+.hero-vid-box video{
+    height: 900px;
+    mix-blend-mode: difference;
+}
+
+.scroll-down{
+    height: 50px;
+    width: 30px;
+    border: 2px solid lightgray;
+    position: absolute;
+    left: 49%;
+}
 
 
 
