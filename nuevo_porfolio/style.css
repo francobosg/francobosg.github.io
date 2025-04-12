@@ -40,6 +40,17 @@ header{
     backdrop-filter: blur(10px);
     padding: 0 30px;
     box-shadow: 0 0 15px #72a1de68;
+    z-index: 999;
+}
+
+.left{
+    display: flex;
+    align-items: center;
+}
+
+.left img{
+    width: 40px;
+    margin: 0 15px ;
 }
 
 
