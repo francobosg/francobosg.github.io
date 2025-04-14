@@ -217,7 +217,7 @@ header ul a{
     height: 10px;
     width: 10px;
     border: 2px solid lightgray;
-    transform: translate(-50%, 100%) rotate(45deg);
+    transform: translate(-50%, -100%) rotate(45deg);
     border-top: transparent;
     border-left: transparent;
     animation: scroll-down 2s ease-in-out infinite;
@@ -228,6 +228,18 @@ header ul a{
 }
 
 
+@keyframes scroll-down{
+    0%{
+        opacity: 0;
+    }
+    30%, 60%{
+        opacity: 1;
+    }
+    100%{
+        top: 90%;
+        opacity: 0;
+    }
+}
 
 
 
