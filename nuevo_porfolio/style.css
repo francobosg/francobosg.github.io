@@ -2,12 +2,12 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-    color: white; /* Negro para que resalte sobre el fondo blanco */
-
+    color: white; 
+    background-color: #121212; /* Un fondo oscuro para resaltar el texto */
+    transition: background-color 0.3s ease; /* Transición suave de fondo */
 }
 
-
-.container{
+.container {
     position: relative;
     width: 100%;
     height: 100%;
@@ -15,24 +15,19 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 100px;
-    background-color: #000000cc;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro ligeramente transparente */
+    backdrop-filter: blur(8px); /* Difuminar el fondo */
+    transition: background-color 0.3s ease;
 }
 
-.back-vid{
+.back-vid {
     position: fixed;
     right: 0;
     bottom: 0;
     z-index: -1;
     mix-blend-mode: lighten;
+    transition: opacity 0.3s ease-in-out;
 }
-
-
-
-
-
-
-
-
 
 header {
     position: fixed;
@@ -49,6 +44,7 @@ header {
     backdrop-filter: blur(12px);
     box-shadow: 0 8px 20px rgba(114, 161, 222, 0.15);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background 0.3s ease;
 }
 
 /* Logo + nombre */
@@ -61,6 +57,11 @@ header {
 .left img {
     width: 48px;
     height: auto;
+    transition: transform 0.3s ease;
+}
+
+.left img:hover {
+    transform: rotate(360deg);
 }
 
 .left h1 {
@@ -74,7 +75,6 @@ header {
     color: #72a1de;
 }
 
-/* Menú */
 header ul {
     display: flex;
     gap: 25px;
@@ -96,11 +96,12 @@ header ul a {
     font-weight: 600;
     font-size: 14.5px;
     letter-spacing: 0.5px;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 header ul a:hover {
     color: #72a1de;
+    transform: scale(1.1);
 }
 
 /* Iconos sociales */
@@ -130,11 +131,7 @@ header ul a:hover {
     transform: scale(1.1);
 }
 
-
-
-
-
-.blackhole-box{
+.blackhole-box {
     position: absolute;
     top: 0;
     width: 100%;
@@ -142,12 +139,13 @@ header ul a:hover {
     mix-blend-mode: lighten;
 }
 
-.blackhole-box video{
+.blackhole-box video {
     width: 100%;
     margin-top: -23.5%;
+    animation: fadeIn 3s ease-out infinite;
 }
 
-.hero{
+.hero {
     position: relative;
     display: flex;
     width: 100%;
@@ -156,12 +154,17 @@ header ul a:hover {
     justify-content: space-between;
 }
 
-.hero-info{
+.hero-info {
     position: absolute;
     left: 5%;
-
+    transition: transform 0.3s ease-in-out;
 }
-.hero-info .hero-info-title{
+
+.hero-info:hover {
+    transform: translateX(10px);
+}
+
+.hero-info .hero-info-title {
     color: #727fde;
     padding: 8px 5px;
     border: 1px solid #2f3eac;
@@ -171,7 +174,7 @@ header ul a:hover {
     border-radius: 50px;
 }
 
-.hero-info h1{
+.hero-info h1 {
     font-size: 60px;
     max-width: 600px;
     font-weight: 700;
@@ -180,14 +183,14 @@ header ul a:hover {
     margin-bottom: 30px;
 }
 
-.hero-info p{
+.hero-info p {
     max-width: 550px;
     line-height: 25px;
     margin-bottom: 40px;
     font-size: 20px;
 }
 
-.hero-info button{
+.hero-info button {
     color: white;
     padding: 15px 35px;
     border-radius: 10px;
@@ -195,15 +198,16 @@ header ul a:hover {
     background-color: rgb(17, 17, 17);
     box-shadow: 0 0 5px #8c98f1;
     cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.hero-info button:hover{
+.hero-info button:hover {
     box-shadow: 0 0 15px #0c1344;
-
+    background-color: #1a1a1a;
 }
 
-.gradient{
-    background: linear-gradient(to right, #218eb9, #7c1380, #8b1696, #202c88, #3248f0,#1285a1);
+.gradient {
+    background: linear-gradient(to right, #218eb9, #7c1380, #8b1696, #202c88, #3248f0, #1285a1);
     background-size: 200%;
     background-clip: text;
     -webkit-background-clip: text;
@@ -211,21 +215,18 @@ header ul a:hover {
     animation: animate-gradient 2.5s linear infinite;
 }
 
-@keyframes animate-gradient{
-    to{
+@keyframes animate-gradient {
+    to {
         background-position: 200%;
     }
 }
 
-
-.hero-vid-box{
+.hero-vid-box {
     position: absolute;
     right: 3%;
     width: auto;
+    animation: slideIn 1.5s ease-out;
 }
-
-
-
 
 .code-window {
     background: linear-gradient(135deg, #0f111a1c, #131731bd);
@@ -261,9 +262,11 @@ header ul a:hover {
 .red {
     background-color: #ff5f56;
 }
+
 .yellow {
     background-color: #ffbd2e;
 }
+
 .green {
     background-color: #27c93f;
 }
@@ -275,31 +278,32 @@ pre {
     white-space: pre-wrap;
 }
 
-/* ---------- Sintaxis destacada ---------- */
+/* Sintaxis destacada */
 .language-js .keyword {
     color: #ff79c6; /* return, const */
 }
+
 .language-js .string {
     color: #f1fa8c; /* 'texto' */
 }
+
 .language-js .boolean {
     color: #8be9fd; /* true, false */
 }
+
 .language-js .function {
     color: #50fa7b; /* function */
 }
+
 .language-js .number {
     color: #bd93f9;
 }
+
 .language-js .this {
     color: #66d9ef;
 }
 
-
-
-
-
-.scroll-down{
+.scroll-down {
     height: 50px;
     width: 30px;
     border: 2px solid lightgray;
@@ -309,11 +313,15 @@ pre {
     border-radius: 50px;
     cursor: pointer;
     box-shadow: 0 0 15px rgba(211, 211, 211, 0.425);
+    transition: transform 0.3s ease;
+}
 
+.scroll-down:hover {
+    transform: translateY(-10px);
 }
 
 .scroll-down::before,
-.scroll-down::after{
+.scroll-down::after {
     content: "";
     position: absolute;
     top: 20%;
@@ -326,47 +334,38 @@ pre {
     border-left: transparent;
     animation: scroll-down 2s ease-in-out infinite;
 }
-.scroll-down::before{
+
+.scroll-down::before {
     top: 30%;
     animation-delay: 0.5s;
 }
 
-
-@keyframes scroll-down{
-    0%{
+@keyframes scroll-down {
+    0% {
         opacity: 0;
     }
-    30%, 60%{
+
+    30%, 60% {
         opacity: 1;
     }
-    100%{
+
+    100% {
         top: 90%;
         opacity: 0;
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-@media (max-aspect-ratio: 16/9){
-    .back-vid{
+@media (max-aspect-ratio: 16/9) {
+    .back-vid {
         width: auto;
         height: 100%;
     }
 }
 
-@media (min-aspect-ratio: 16/9){
-    .back-vid{
-        width:  100%;
-        height:auto;
+@media (min-aspect-ratio: 16/9) {
+    .back-vid {
+        width: 100%;
+        height: auto;
     }
 }
+
