@@ -145,6 +145,101 @@ header ul a:hover {
     animation: fadeIn 3s ease-out infinite;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hero-info-title {
+    display: inline-flex;
+    align-items: center;
+    color: #ffffff;
+    font-size: 14px; /* Reducir tamaño del texto */
+    font-weight: 600;
+    text-decoration: none;
+    padding: 8px 18px; /* Reducir el padding */
+    background: linear-gradient(45deg, #6a11cb, #2575fc); /* Gradiente más suave */
+    border-radius: 25px; /* Bordes redondeados pero más pequeños */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra más sutil */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+
+.hero-info-title i {
+    margin-right: 8px; /* Reducir espacio entre el ícono y el texto */
+    font-size: 20px; /* Reducir tamaño del ícono */
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.hero-info-title:hover {
+    transform: translateY(-3px); /* Movimiento más sutil */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada al hacer hover */
+}
+
+.hero-info-title:hover i {
+    color: #ffcc00; /* Cambiar color del ícono al hacer hover */
+}
+
+/* Eliminar estilo predeterminado de enlace */
+.cv-button:link,
+.cv-button:visited,
+.cv-button:active {
+    text-decoration: none;
+}
+
+.cv-button {
+    display: inline-flex;
+    align-items: center;
+    color: inherit;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px; /* Reducir tamaño del texto del botón */
+    border-radius: 25px;
+    padding: 8px 18px; /* Reducir padding */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cv-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05); /* Efecto de aumento al pasar el ratón */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .hero {
     position: relative;
     display: flex;
@@ -164,16 +259,6 @@ header ul a:hover {
     transform: translateX(10px);
 }
 
-.hero-info .hero-info-title {
-    color: #727fde;
-    padding: 8px 5px;
-    border: 1px solid #2f3eac;
-    width: 240px;
-    background-color: rgb(17, 17, 17);
-    box-shadow: 0 0 5px #3745af;
-    border-radius: 50px;
-}
-
 .hero-info h1 {
     font-size: 60px;
     max-width: 600px;
@@ -190,21 +275,6 @@ header ul a:hover {
     font-size: 20px;
 }
 
-.hero-info button {
-    color: white;
-    padding: 15px 35px;
-    border-radius: 10px;
-    border: 1px solid #4354d3;
-    background-color: rgb(17, 17, 17);
-    box-shadow: 0 0 5px #8c98f1;
-    cursor: pointer;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.hero-info button:hover {
-    box-shadow: 0 0 15px #0c1344;
-    background-color: #1a1a1a;
-}
 
 .gradient {
     background: linear-gradient(to right, #218eb9, #7c1380, #8b1696, #202c88, #3248f0, #1285a1);
@@ -220,6 +290,16 @@ header ul a:hover {
         background-position: 200%;
     }
 }
+
+
+
+
+
+
+
+
+
+
 
 .hero-vid-box {
     position: absolute;
