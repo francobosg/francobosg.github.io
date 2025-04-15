@@ -2,13 +2,10 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    background-color: #121212;
-    /* Un fondo oscuro para resaltar el texto */
-    transition: background-color 0.3s ease;
-    /* Transición suave de fondo */
+    color: white; 
+    background-color: #121212; /* Un fondo oscuro para resaltar el texto */
+    transition: background-color 0.3s ease; /* Transición suave de fondo */
 }
-
 
 .container {
     position: relative;
@@ -18,10 +15,10 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 100px;
-    background-color: #000000a6;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro ligeramente transparente */
+    backdrop-filter: blur(8px); /* Difuminar el fondo */
+    transition: background-color 0.3s ease;
 }
-
-
 
 .back-vid {
     position: fixed;
@@ -31,21 +28,6 @@ body {
     mix-blend-mode: lighten;
     transition: opacity 0.3s ease-in-out;
 }
-
-@media (max-aspect-ratio: 16/9) {
-    .back-vid {
-        width: auto;
-        height: 100%;
-    }
-}
-
-@media (min-aspect-ratio: 16/9) {
-    .back-vid {
-        width: 100%;
-        height: auto;
-    }
-}
-
 
 header {
     position: fixed;
@@ -74,6 +56,7 @@ header {
 
 .left img {
     width: 48px;
+    height: auto;
     transition: transform 0.3s ease;
 }
 
@@ -179,41 +162,31 @@ header ul a:hover {
     display: inline-flex;
     align-items: center;
     color: #ffffff;
-    font-size: 14px;
-    /* Reducir tamaño del texto */
+    font-size: 14px; /* Reducir tamaño del texto */
     font-weight: 600;
     text-decoration: none;
-    padding: 8px 18px;
-    /* Reducir el padding */
-    background: linear-gradient(45deg, #6a11cb, #2575fc);
-    /* Gradiente más suave */
-    border-radius: 25px;
-    /* Bordes redondeados pero más pequeños */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    /* Sombra más sutil */
+    padding: 8px 18px; /* Reducir el padding */
+    background: linear-gradient(45deg, #6a11cb, #2575fc); /* Gradiente más suave */
+    border-radius: 25px; /* Bordes redondeados pero más pequeños */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra más sutil */
     transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
     cursor: pointer;
 }
 
 .hero-info-title i {
-    margin-right: 8px;
-    /* Reducir espacio entre el ícono y el texto */
-    font-size: 20px;
-    /* Reducir tamaño del ícono */
+    margin-right: 8px; /* Reducir espacio entre el ícono y el texto */
+    font-size: 20px; /* Reducir tamaño del ícono */
     color: #ffffff;
     transition: color 0.3s ease;
 }
 
 .hero-info-title:hover {
-    transform: translateY(-3px);
-    /* Movimiento más sutil */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-    /* Sombra más pronunciada al hacer hover */
+    transform: translateY(-3px); /* Movimiento más sutil */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada al hacer hover */
 }
 
 .hero-info-title:hover i {
-    color: #ffcc00;
-    /* Cambiar color del ícono al hacer hover */
+    color: #ffcc00; /* Cambiar color del ícono al hacer hover */
 }
 
 /* Eliminar estilo predeterminado de enlace */
@@ -229,11 +202,9 @@ header ul a:hover {
     color: inherit;
     text-decoration: none;
     font-weight: bold;
-    font-size: 14px;
-    /* Reducir tamaño del texto del botón */
+    font-size: 14px; /* Reducir tamaño del texto del botón */
     border-radius: 25px;
-    padding: 8px 18px;
-    /* Reducir padding */
+    padding: 8px 18px; /* Reducir padding */
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -242,10 +213,8 @@ header ul a:hover {
 
 .cv-button:hover {
     background-color: rgba(255, 255, 255, 0.1);
-    transform: scale(1.05);
-    /* Efecto de aumento al pasar el ratón */
+    transform: scale(1.05); /* Efecto de aumento al pasar el ratón */
 }
-
 
 
 
@@ -324,6 +293,14 @@ header ul a:hover {
 
 
 
+
+
+
+
+
+
+
+
 .hero-vid-box {
     position: absolute;
     right: 3%;
@@ -383,23 +360,19 @@ pre {
 
 /* Sintaxis destacada */
 .language-js .keyword {
-    color: #ff79c6;
-    /* return, const */
+    color: #ff79c6; /* return, const */
 }
 
 .language-js .string {
-    color: #f1fa8c;
-    /* 'texto' */
+    color: #f1fa8c; /* 'texto' */
 }
 
 .language-js .boolean {
-    color: #8be9fd;
-    /* true, false */
+    color: #8be9fd; /* true, false */
 }
 
 .language-js .function {
-    color: #50fa7b;
-    /* function */
+    color: #50fa7b; /* function */
 }
 
 .language-js .number {
@@ -452,8 +425,7 @@ pre {
         opacity: 0;
     }
 
-    30%,
-    60% {
+    30%, 60% {
         opacity: 1;
     }
 
@@ -463,15 +435,24 @@ pre {
     }
 }
 
+@media (max-aspect-ratio: 16/9) {
+    .back-vid {
+        width: auto;
+        height: 100%;
+    }
+}
+
+@media (min-aspect-ratio: 16/9) {
+    .back-vid {
+        width: 100%;
+        height: auto;
+    }
+}
 
 
 
 
-/* 
-
-
-
-.info-section {
+.info-section{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -479,12 +460,12 @@ pre {
     margin-top: 100px;
 }
 
-.section-title {
+.section-title{
     font-size: 40px;
     font-weight: 700;
 }
 
-.info-cards {
+.info-cards{
     display: grid;
     grid-template-columns: auto auto auto;
     gap: 20px;
@@ -493,7 +474,7 @@ pre {
     margin-top: 30px;
 }
 
-.card {
+.card{
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -504,26 +485,25 @@ pre {
     border: 1px solid gray;
     background-color: black;
     border-radius: 20px;
-    transition: 0.3s;
 }
 
-.card img {
+.card img{
     width: 80%;
     height: 50%;
     object-fit: cover;
 }
 
-.card h1 {
+.card h1{
     position: absolute;
     margin: 0;
     bottom: 40%;
     left: 5%;
-    font-size: 25px;
+    font-size: 25px ;
     z-index: 1;
     color: lightgray;
 }
 
-.card p {
+.card p{
     position: absolute;
     bottom: 3%;
     left: 5%;
@@ -535,7 +515,7 @@ pre {
 
 }
 
-.card video {
+.card video{
     margin-top: 10%;
     width: 70%;
     height: 50%;
@@ -543,62 +523,9 @@ pre {
     mix-blend-mode: lighten;
 }
 
-.card button {
-    color: white;
-    padding: 10px 15px;
-    border-radius: 10px;
-    border: 1px solid blue;
-    background-color: black;
-    box-shadow: 0 0 5px rgb(81, 81, 247);
-    cursor: pointer;
-    transition: 0.3s;
-    position: absolute;
-    bottom: 5%;
-    left: 5%;
-}
-
-.card button:hover {
-    box-shadow: 0 0 5px rgb(33, 33, 104);
-    opacity: 0.7;
-}
-
-.card:hover {
-    box-shadow: 0 0 15px grey;
-}
-
-.card:nth-child(3) {
-    grid-row: span 2;
-    height: 83vh;
-
-}
-
-.card:nth-child(3) p {
-    bottom: 12%;
-
-}
-
-.card:nth-child(3) h1 {
-    bottom: 21%;
-
-}
-
-.card:nth-child(4) {
-    grid-column: span 2;
-}
-
-.card:nth-child(4) p {
-    max-width: 650px;
-}
 
 
-.card:nth-child(4)h1 {
-    bottom: 35%;
-}
-
-
- */
-
-.my-projects {
+.my-projects{
     display: flex;
     flex-direction: column;
     gap: 10%;
@@ -610,7 +537,7 @@ pre {
     margin-bottom: 700px;
 }
 
-.project-card {
+.project-card{
     display: flex;
     width: 100%;
     height: 40%;
@@ -619,7 +546,7 @@ pre {
     justify-content: center;
 }
 
-.project-vidbox {
+.project-vidbox{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -628,10 +555,10 @@ pre {
     cursor: pointer;
     min-width: 400px;
     transform: 0.5s;
-    mix-blend-mode: exclusion;
+    mix-blend-mode: difference;
 }
 
-.project-vidbox video {
+.project-vidbox video{
     object-fit: cover;
     width: 100%;
     box-shadow: 0 0 10px lightgray;
@@ -639,50 +566,6 @@ pre {
     transition: 0.5s;
 }
 
-.project-vidbox video:hover {
+.project-vidbox video:hover{
     box-shadow: 0 0 20px lightgray;
-}
-
-.project-info {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: center;
-    width: 50%;
-    padding-left: 10%;
-}
-
-.project-info h1 {
-    width: 90%;
-    font-size: 25px;
-    font-weight: bold;
-    text-wrap: nowrap;
-    margin-bottom: 10px;
-    margin-top: 0;
-    max-width: 450px;
-}
-
-.project-info p {
-    width: 90%;
-    max-width: 400px;
-    min-width: 300px;
-    margin-bottom: 50px;
-    margin-top: 0;
-}
-
-.project-info button{
-    color: white;
-    padding: 10px 15px;
-    border-radius: 10px;
-    border: 1px solid blue;
-    background-color: black;
-    box-shadow: 0 0 5px rgb(81, 81, 247);
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-
-.project-info button:hover {
-    box-shadow: 0 0 5px rgb(33, 33, 104);
-    opacity: 0.7;
 }

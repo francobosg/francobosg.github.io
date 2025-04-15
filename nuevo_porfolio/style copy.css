@@ -18,6 +18,8 @@ body {
     background-color: #000000cc;
 }
 
+
+
 .back-vid{
     position: fixed;
     right: 0;
@@ -267,3 +269,6 @@ header ul a{
         height:auto;
     }
 }
+
+
+
