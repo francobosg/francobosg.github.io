@@ -29,6 +29,16 @@ body {
     transition: opacity 0.3s ease-in-out;
 }
 
+
+
+
+
+
+
+
+
+
+
 header {
     position: fixed;
     top: 0;
@@ -130,6 +140,11 @@ header ul a:hover {
     box-shadow: 0 0 12px rgba(114, 127, 222, 0.6);
     transform: scale(1.1);
 }
+
+
+
+
+
 
 .blackhole-box {
     position: absolute;
@@ -449,3 +464,33 @@ pre {
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+.info-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin-top: 100px;
+}
+
+.section-title{
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.info-cards´{
+    display: grid;
+    grid-template-columns: auto;
+}
