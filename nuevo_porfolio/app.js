@@ -9,5 +9,7 @@ videoList.forEach(function(video){
     video.addEventListener('mouseover',function(){
         video.play()
     })
-    video.addEventListener('mouseout')
+    video.addEventListener('mouseout', function(){
+        video.pause()
+    })
 })
