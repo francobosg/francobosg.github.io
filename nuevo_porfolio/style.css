@@ -1251,21 +1251,36 @@ body.blurred::after {
 }
 
 
-.fadeInRight{
-    animation: fadeInAnimation both;
-    animation-timeline: view();
-}
-
+.fadeInRight {
+    opacity: 0;
+    transform: translateX(-500px) scale(0.2);
+    filter: blur(20px);
+    transition:
+      opacity 0.9s ease,
+      transform 0.9s ease,
+      filter 0.9s ease;
+  }
+  
+  .fadeInRight.visible {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    filter: blur(0);
+  }
+  
 
 @keyframes fadeInAnimation {
     0%{
         opacity: 0;
         transform: translateX(-500px) scale(0.2); 
+        filter: blur(20px);
     }
     35% ,  65%{
         opacity: 1;
-        transform: translateX(0px) scale(0.2);
-        
+        transform: translateX(0px) scale(1);
+        filter: blur(0);
+    }
+    100%{
+        filter: blur(20px);
     }
 }
 

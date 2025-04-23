@@ -93,3 +93,18 @@ const observerBlur = new IntersectionObserver((entries) => {
   });
   document.querySelectorAll('.autoDisplay').forEach(el => observerDisplay.observe(el));
   
+
+  const observerFadeRight = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      } else {
+        entry.target.classList.remove('visible'); // Solo si quieres que desaparezca al salir
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+  
+  document.querySelectorAll('.fadeInRight').forEach(el => observerFadeRight.observe(el));
+  
