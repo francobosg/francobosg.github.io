@@ -1221,6 +1221,55 @@ body.blurred::after {
 }
 
 
+.autoDisplay {
+    opacity: 0;
+    filter: blur(18px);
+    transform: translateY(-200px) scale(0);
+    transition:
+      opacity 0.8s ease,
+      filter 0.8s ease,
+      transform 0.8s ease;
+  }
+  
+  .autoDisplay.visible {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+  }
+  
+@keyframes autoDisplayAnimation {
+    from{
+        filter: blur(18px);
+        transform: translateY(-200px) scale(0);
+        opacity: 0.2;
+    }
+    50%{
+        opacity: 1;
+        filter: blur(0);
+        transform: translateX(0) scale(1);
+    }
+}
+
+
+.fadeInRight{
+    animation: fadeInAnimation both;
+    animation-timeline: view();
+}
+
+
+@keyframes fadeInAnimation {
+    0%{
+        opacity: 0;
+        transform: translateX(-500px) scale(0.2); 
+    }
+    35% ,  65%{
+        opacity: 1;
+        transform: translateX(0px) scale(0.2);
+        
+    }
+}
+
+
 
 
 

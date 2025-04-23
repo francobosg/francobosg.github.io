@@ -65,7 +65,8 @@ if (localStorage.getItem('cookieConsent') === 'true') {
 
 
 
-  const observer = new IntersectionObserver((entries) => {
+ // Observer para autoBlur
+const observerBlur = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
@@ -74,8 +75,21 @@ if (localStorage.getItem('cookieConsent') === 'true') {
       }
     });
   }, {
-    threshold: 0.2 // cuando el 20% del elemento es visible
+    threshold: 0.2
   });
-
-  document.querySelectorAll('.autoBlur').forEach(el => observer.observe(el));
-
+  document.querySelectorAll('.autoBlur').forEach(el => observerBlur.observe(el));
+  
+  // Observer para autoDisplay
+  const observerDisplay = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      } else {
+        entry.target.classList.remove('visible');
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+  document.querySelectorAll('.autoDisplay').forEach(el => observerDisplay.observe(el));
+  
