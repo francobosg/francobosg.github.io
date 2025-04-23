@@ -62,3 +62,20 @@ if (localStorage.getItem('cookieConsent') === 'true') {
   document.body.style.paddingRight = ''; // Restablece el padding
   document.body.classList.remove('blurred'); // Elimina la clase que aplica el difuminado
 }
+
+
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      } else {
+        entry.target.classList.remove('visible');
+      }
+    });
+  }, {
+    threshold: 0.2 // cuando el 20% del elemento es visible
+  });
+
+  document.querySelectorAll('.autoBlur').forEach(el => observer.observe(el));
+

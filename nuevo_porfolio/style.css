@@ -9,6 +9,9 @@ body {
     /* Transición suave de fondo */
 }
 
+html{
+    scroll-behavior: smooth;
+}
 
 .container {
     position: relative;
@@ -32,19 +35,7 @@ body {
     transition: opacity 0.3s ease-in-out;
 }
 
-@media (max-aspect-ratio: 16/9) {
-    .back-vid {
-        width: auto;
-        height: 100%;
-    }
-}
 
-@media (min-aspect-ratio: 16/9) {
-    .back-vid {
-        width: 100%;
-        height: auto;
-    }
-}
 
 
 header {
@@ -1201,3 +1192,49 @@ body.blurred::after {
     }
 }
 
+
+
+.autoBlur {
+    transition: filter 1s ease, opacity 1s ease;
+    filter: blur(40px);
+    opacity: 0;
+}
+
+.autoBlur.visible {
+    filter: blur(0);
+    opacity: 1;
+}
+
+
+@keyframes autoBLurAnimation {
+    0%{
+        filter: blur(40px);
+    }
+    35%, 65%{
+        fill: blur(0);
+        opacity: 1;
+    }
+    100%{
+        filter: blur(40px);
+        opacity: 0;
+    }
+}
+
+
+
+
+
+
+@media (max-aspect-ratio: 16/9) {
+    .back-vid {
+        width: auto;
+        height: 100%;
+    }
+}
+
+@media (min-aspect-ratio: 16/9) {
+    .back-vid {
+        width: 100%;
+        height: auto;
+    }
+}
