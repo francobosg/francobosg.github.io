@@ -24,40 +24,41 @@
     bar.style.setProperty('--hover-progress', `${progress}%`);
   });
 
-  // Cookie banner functionality
+  
+
   const cookieBanner = document.querySelector('.cookie-banner');
-  const acceptBtn = document.querySelector('#accept-cookies');
-  const rejectBtn = document.querySelector('#reject-cookies');
-  const readMoreBtn = document.querySelector('#read-more');
+const acceptBtn = document.querySelector('#accept-cookies');
+const rejectBtn = document.querySelector('#reject-cookies');
+const readMoreBtn = document.querySelector('#read-more');
 
-  function hideCookieBanner() {
-    localStorage.setItem('cookieConsent', 'true');
-    cookieBanner.style.display = 'none';
-    document.body.style.overflow = 'auto'; // Habilita el desplazamiento de la página
-    document.body.classList.remove('no-scroll'); // Elimina la clase que bloquea el scroll
-    document.body.style.position = ''; // Elimina el estilo de posición que bloquea el scroll
-    document.body.style.paddingRight = ''; // Restablece el padding en el body
-    document.body.style.setProperty('backdrop-filter', 'none'); // Elimina el fondo difuminado
-  }
+function hideCookieBanner() {
+  localStorage.setItem('cookieConsent', 'true');
+  cookieBanner.style.display = 'none';
+  document.body.style.overflow = 'auto'; // Habilita el desplazamiento de la página
+  document.body.classList.remove('no-scroll'); // Elimina la clase que bloquea el scroll
+  document.body.style.position = ''; // Elimina el estilo de posición que bloquea el scroll
+  document.body.style.paddingRight = ''; // Restablece el padding en el body
+  document.body.classList.remove('blurred'); // Elimina la clase que aplica el difuminado
+}
 
-  function rejectCookies() {
-    localStorage.setItem('cookieConsent', 'false');
-    cookieBanner.style.display = 'none';
-    document.body.style.overflow = 'auto'; // Habilita el desplazamiento de la página
-    document.body.classList.remove('no-scroll'); // Elimina la clase que bloquea el scroll
-    document.body.style.position = ''; // Elimina el estilo de posición que bloquea el scroll
-    document.body.style.paddingRight = ''; // Restablece el padding en el body
-    document.body.style.setProperty('backdrop-filter', 'none'); // Elimina el fondo difuminado
-  }
+function rejectCookies() {
+  localStorage.setItem('cookieConsent', 'false');
+  cookieBanner.style.display = 'none';
+  document.body.style.overflow = 'auto'; // Habilita el desplazamiento de la página
+  document.body.classList.remove('no-scroll'); // Elimina la clase que bloquea el scroll
+  document.body.style.position = ''; // Elimina el estilo de posición que bloquea el scroll
+  document.body.style.paddingRight = ''; // Restablece el padding en el body
+  document.body.classList.remove('blurred'); // Elimina la clase que aplica el difuminado
+}
 
-  acceptBtn.addEventListener('click', hideCookieBanner);
-  rejectBtn.addEventListener('click', rejectCookies);
+acceptBtn.addEventListener('click', hideCookieBanner);
+rejectBtn.addEventListener('click', rejectCookies);
 
-  if (localStorage.getItem('cookieConsent') === 'true') {
-    cookieBanner.style.display = 'none';
-    document.body.style.overflow = 'auto'; // Habilita el desplazamiento
-    document.body.classList.remove('no-scroll'); // Elimina la clase de no-scroll
-    document.body.style.position = ''; // Elimina el estilo de posición
-    document.body.style.paddingRight = ''; // Restablece el padding
-    document.body.style.setProperty('backdrop-filter', 'none'); // Elimina el fondo difuminado
-  }
+if (localStorage.getItem('cookieConsent') === 'true') {
+  cookieBanner.style.display = 'none';
+  document.body.style.overflow = 'auto'; // Habilita el desplazamiento
+  document.body.classList.remove('no-scroll'); // Elimina la clase de no-scroll
+  document.body.style.position = ''; // Elimina el estilo de posición
+  document.body.style.paddingRight = ''; // Restablece el padding
+  document.body.classList.remove('blurred'); // Elimina la clase que aplica el difuminado
+}
