@@ -16,3 +16,13 @@ videoList.forEach(function(video){
 
     })
 })
+
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("contact-form");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("¡Gracias por tu mensaje, pronto me pondré en contacto!");
+      form.reset(); // Limpiar campos
+    });
+  });
+  
