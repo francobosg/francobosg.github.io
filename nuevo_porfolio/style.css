@@ -1007,3 +1007,124 @@ pre {
   }
   
   
+/* Footer Styling */
+.footer {
+    background-color: #1111111c;
+    color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 16px;
+    width: 100%; /* Asegura que el footer ocupe el 100% de ancho */
+    max-width: 1200px; /* Limita el ancho máximo del footer */
+    margin: 0 auto; /* Centra el footer si el ancho es menor que el máximo */
+}
+
+.footer .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer .social-links {
+    margin-top: 10px;
+}
+
+.footer .social-links a {
+    color: #fff;
+    font-size: 24px;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.footer .social-links a:hover {
+    color: #00ffff; /* Puedes ajustar el color para que coincida con tu tema */
+}
+
+.footer p {
+    margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+/* Cookie banner */
+.cookie-banner {
+    position: fixed;
+    top: 50%; /* Centrado vertical */
+    left: 50%; /* Centrado horizontal */
+    transform: translate(-50%, -50%); /* Ajusta la posición al centro exacto */
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro semi-transparente */
+    padding: 20px 40px;
+    text-align: center;
+    color: #fff; /* Color de texto claro */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6); /* Sombra pronunciada */
+    z-index: 9999; /* Asegura que esté siempre sobre otros elementos */
+    border-radius: 15px; /* Bordes redondeados */
+    width: 90%; /* Ancho ajustado */
+    max-width: 500px; /* Máximo ancho */
+    animation: fadeInUp 1s ease-out;
+    backdrop-filter: blur(10px); /* Difumina el fondo detrás del banner */
+}
+
+/* Fondo difuminado fuera del banner */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* Fondo semitransparente */
+    z-index: 9998; /* Justo debajo del banner */
+    pointer-events: none; /* No bloquea interacciones */
+    opacity: 1;
+    transition: opacity 0.5s ease; /* Transición para la desaparición */
+}
+
+/* Texto del banner */
+.cookie-banner p {
+    margin: 0;
+    font-size: 16px;
+    color: #d1d1d1; /* Color de texto más suave */
+    margin-bottom: 20px; /* Espacio entre el texto y los botones */
+}
+
+/* Estilo del enlace */
+.cookie-banner a {
+    color: #4a90e2; /* Color de enlace */
+    text-decoration: underline;
+}
+
+/* Estilo de los botones */
+.cookie-banner button {
+    background-color: #5c6bc0; /* Fondo del botón */
+    border: none;
+    color: white;
+    padding: 12px 24px; /* Botón más grande */
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px; /* Bordes redondeados */
+    margin: 10px 5px; /* Espacio entre botones */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transición suave */
+    display: inline-block;
+}
+
+/* Efecto hover sobre los botones */
+.cookie-banner button:hover {
+    background-color: #3f51b5; /* Fondo más oscuro al hacer hover */
+    transform: translateY(-3px); /* Movimiento suave al hacer hover */
+}
+
+/* Animación para la entrada del banner */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -60%) scale(0.8); /* Comienza más pequeño y opaco */
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1); /* Se va ampliando hasta quedar centrado */
+    }
+}
