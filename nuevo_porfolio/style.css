@@ -7,6 +7,10 @@ body {
     /* Un fondo oscuro para resaltar el texto */
     transition: background-color 0.3s ease;
     /* Transición suave de fondo */
+ 
+    overflow-x: hidden;
+
+
 }
 
 html{
@@ -15,7 +19,8 @@ html{
 
 .container {
     position: relative;
-    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -1180,6 +1185,9 @@ body.blurred::after {
     transform: translateY(-3px); /* Movimiento suave al hacer hover */
 }
 
+
+
+
 /* Animación para la entrada del banner */
 @keyframes fadeInUp {
     0% {
@@ -1251,9 +1259,12 @@ body.blurred::after {
 }
 
 
+
+
+
 .fadeInRight {
     opacity: 0;
-    transform: translateX(-500px) scale(0.2);
+    transform: translateX(500px) scale(0.2); /* <-- Viene desde la derecha */
     filter: blur(20px);
     transition:
       opacity 0.9s ease,
@@ -1266,6 +1277,7 @@ body.blurred::after {
     transform: translateX(0) scale(1);
     filter: blur(0);
   }
+  
   
 
 @keyframes fadeInAnimation {
@@ -1286,9 +1298,6 @@ body.blurred::after {
 
 
 
-
-
-
 @media (max-aspect-ratio: 16/9) {
     .back-vid {
         width: auto;
@@ -1301,4 +1310,160 @@ body.blurred::after {
         width: 100%;
         height: auto;
     }
+}
+
+
+@media screen and (max-width: 1000px){
+    .hero-info h1{
+        font-size: 40px;
+        max-width: 400px;
+        line-height: 40px;
+    }
+
+    .hero-info p{
+        max-width: 300px;
+    }
+
+    .hero-vid-box{
+        right: 0;
+    }
+
+    .hero-vid-box  .code-window{
+        height: 500px;
+    }
+
+    .section-title{
+        font-size: 30px;
+    }
+
+    .my-projects{
+        margin-bottom: 300px;
+    }
+
+    .project-vidbox video{
+        width: 250px;
+        margin-left: -100px;
+    }
+    .project-info{
+        padding-left: 0;
+        margin-left: -50px;
+    }
+
+    .project-info h1{
+        font-size: 20px;
+        text-wrap: wrap;
+        max-width: 200px;
+        min-width: 0;
+    }
+}
+
+
+@media screen and (max-width: 700px){
+    header{
+        position: fixed;
+        height: 50px;
+    }
+
+    header ul{
+        display: none;
+    }
+
+    header .box-icons{
+        display: none;
+    }
+
+    header h1{
+        font-size: 25px;
+    }
+    .blackhole-box video{
+        margin-top: -16%;
+    }
+
+    .hero{
+        flex-direction: column;
+    }
+
+    .autoBlur{
+        animation: none;
+    }
+
+    .hero-info{
+        bottom: 5%;
+    }
+
+    .scroll-down{
+        bottom: 5%;
+    }
+
+    .hero-info h1{
+        line-height: 50px;
+    }
+
+    .hero-vid-box{
+        height: 200px;
+        top: 5%;
+        right: 5%;
+    }
+
+    .my-projects{
+        margin-bottom: 600px;
+    }
+
+    .project-card{
+        flex-direction: column;
+        margin-left: 25%;
+        gap: 30px;
+    }
+
+    .project-info{
+        width: 85%;
+    }
+
+    .project-info h1{
+        text-wrap:nowrap;
+
+    }
+
+    .project-info p{
+        max-width: 300px;
+    }
+
+    .designer{
+        top: 15%;
+        left: 18%;
+    }
+
+    .coder{
+        top: 50%;
+        left: 18%;
+    }
+
+    .skills-box h1{
+        margin-bottom: 0;
+        margin-top: 70px;
+    }
+
+    .slider{
+        bottom: 0;
+    }
+
+    .slider img{
+        width: 60%;
+    }
+
+    .contact-section{
+        flex-direction: column;
+        margin-top: 100px;
+        margin-bottom: 50px;
+    }
+
+    .contact-section .section-title{
+        top: -40px;
+        left: 25%;
+    }
+
+    .project-vidbox{
+        min-width: 200px;
+    }
+
 }
