@@ -1,28 +1,26 @@
-const video1 = document.getElementById('projectVideo1');
-const video2 = document.getElementById('projectVideo2');
-const video3 = document.getElementById('projectVideo3');
-const hoverSign= document.querySelector('.hover-sign')
-
-const videoList = [video1, video2, video3];
-
-videoList.forEach(function(video){
-    video.addEventListener('mouseover',function(){
-        video.play();
-        hoverSign.classList.add("active")
-    })
-    video.addEventListener('mouseout', function(){
-        video.pause();
-        hoverSign.classList.remove("active")
-
-    })
-})
-
-document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("contact-form");
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      alert("¡Gracias por tu mensaje, pronto me pondré en contacto!");
-      form.reset(); // Limpiar campos
+// Video hover effects
+const videoList = [
+    document.getElementById('projectVideo1'),
+    document.getElementById('projectVideo2'),
+    document.getElementById('projectVideo3')
+  ];
+  
+  const hoverSign = document.querySelector('.hover-sign');
+  
+  videoList.forEach(video => {
+    video?.addEventListener('mouseenter', () => {
+      video.play();
+      hoverSign?.classList.add("active");
     });
+  
+    video?.addEventListener('mouseleave', () => {
+      video.pause();
+      hoverSign?.classList.remove("active");
+    });
+  });
+  
+  document.querySelectorAll('.progress-bar').forEach(bar => {
+    const progress = bar.dataset.progress;
+    bar.style.setProperty('--hover-progress', `${progress}%`);
   });
   
