@@ -419,6 +419,7 @@ pre {
         padding: 40px 20px;
         overflow-x: hidden;
         gap: 40px;
+        margin-top: 5%;
     }
 
     .hero-info,
