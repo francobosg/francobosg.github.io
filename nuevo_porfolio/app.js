@@ -1,110 +1,67 @@
- // Video hover effects
- const videoList = [
+document.addEventListener("DOMContentLoaded", () => {
+  // 🎥 Video hover effects
+  const videoList = [
     document.getElementById('projectVideo1'),
     document.getElementById('projectVideo2'),
     document.getElementById('projectVideo3')
   ];
-  
+
   const hoverSign = document.querySelector('.hover-sign');
-  
+
   videoList.forEach(video => {
-    video?.addEventListener('mouseenter', () => {
+    if (!video) return;
+    video.addEventListener('mouseenter', () => {
       video.play();
       hoverSign?.classList.add("active");
     });
-  
-    video?.addEventListener('mouseleave', () => {
+    video.addEventListener('mouseleave', () => {
       video.pause();
       hoverSign?.classList.remove("active");
     });
   });
-  
+
+  // 📊 Progress bar setup
   document.querySelectorAll('.progress-bar').forEach(bar => {
     const progress = bar.dataset.progress;
     bar.style.setProperty('--hover-progress', `${progress}%`);
   });
 
-  
-
+  // 🍪 Cookie banner logic
   const cookieBanner = document.querySelector('.cookie-banner');
-const acceptBtn = document.querySelector('#accept-cookies');
-const rejectBtn = document.querySelector('#reject-cookies');
-const readMoreBtn = document.querySelector('#read-more');
+  const acceptBtn = document.querySelector('#accept-cookies');
+  const rejectBtn = document.querySelector('#reject-cookies');
 
-function hideCookieBanner() {
-  localStorage.setItem('cookieConsent', 'true');
-  cookieBanner.style.display = 'none';
-  document.body.style.overflow = 'auto'; // Habilita el desplazamiento de la página
-  document.body.classList.remove('no-scroll'); // Elimina la clase que bloquea el scroll
-  document.body.style.position = ''; // Elimina el estilo de posición que bloquea el scroll
-  document.body.style.paddingRight = ''; // Restablece el padding en el body
-  document.body.classList.remove('blurred'); // Elimina la clase que aplica el difuminado
-}
+  const hideCookieBanner = (accepted) => {
+    localStorage.setItem('cookieConsent', accepted ? 'true' : 'false');
+    cookieBanner?.style.setProperty('display', 'none');
+    document.body.style.overflow = 'auto';
+    document.body.classList.remove('no-scroll', 'blurred');
+    document.body.style.position = '';
+    document.body.style.paddingRight = '';
+  };
 
-function rejectCookies() {
-  localStorage.setItem('cookieConsent', 'false');
-  cookieBanner.style.display = 'none';
-  document.body.style.overflow = 'auto'; // Habilita el desplazamiento de la página
-  document.body.classList.remove('no-scroll'); // Elimina la clase que bloquea el scroll
-  document.body.style.position = ''; // Elimina el estilo de posición que bloquea el scroll
-  document.body.style.paddingRight = ''; // Restablece el padding en el body
-  document.body.classList.remove('blurred'); // Elimina la clase que aplica el difuminado
-}
+  acceptBtn?.addEventListener('click', () => hideCookieBanner(true));
+  rejectBtn?.addEventListener('click', () => hideCookieBanner(false));
 
-acceptBtn.addEventListener('click', hideCookieBanner);
-rejectBtn.addEventListener('click', rejectCookies);
+  if (localStorage.getItem('cookieConsent') === 'true' || localStorage.getItem('cookieConsent') === 'false') {
+    hideCookieBanner(true);
+  }
 
-if (localStorage.getItem('cookieConsent') === 'true') {
-  cookieBanner.style.display = 'none';
-  document.body.style.overflow = 'auto'; // Habilita el desplazamiento
-  document.body.classList.remove('no-scroll'); // Elimina la clase de no-scroll
-  document.body.style.position = ''; // Elimina el estilo de posición
-  document.body.style.paddingRight = ''; // Restablece el padding
-  document.body.classList.remove('blurred'); // Elimina la clase que aplica el difuminado
-}
-
-
-
- // Observer para autoBlur
-const observerBlur = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      } else {
-        entry.target.classList.remove('visible');
-      }
+  // 👀 IntersectionObserver reusable logic
+  const createObserver = (selector) => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        entry.target.classList.toggle('visible', entry.isIntersecting);
+      });
+    }, {
+      threshold: window.innerWidth < 768 ? 0.1 : 0.2
     });
-  }, {
-    threshold: 0.2
-  });
-  document.querySelectorAll('.autoBlur').forEach(el => observerBlur.observe(el));
-  
-  // Observer para autoDisplay
-  const observerDisplay = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      } else {
-        entry.target.classList.remove('visible');
-      }
-    });
-  }, {
-    threshold: 0.2
-  });
-  document.querySelectorAll('.autoDisplay').forEach(el => observerDisplay.observe(el));
-  
 
-  const observerFadeRight = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      } else {
-        entry.target.classList.remove('visible'); // Solo si quieres que desaparezca al salir
-      }
-    });
-  }, {
-    threshold: 0.2
-  });
-  
-  document.querySelectorAll('.fadeInRight').forEach(el => observerFadeRight.observe(el));
-  
+    document.querySelectorAll(selector).forEach(el => observer.observe(el));
+  };
+
+  // Inicializar observers
+  createObserver('.autoBlur');
+  createObserver('.autoDisplay');
+  createObserver('.fadeInRight');
+});
