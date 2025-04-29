@@ -65,3 +65,5 @@ document.addEventListener("DOMContentLoaded", () => {
   createObserver('.autoDisplay');
   createObserver('.fadeInRight');
 });
+
+

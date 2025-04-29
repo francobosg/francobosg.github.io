@@ -409,6 +409,80 @@ pre {
 
 
 
+
+/* Tablets */
+@media screen and (max-width: 768px) {
+    .hero-vid-box {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .code-window {
+        font-size: 11px; /* Fuente más pequeña */
+        padding: 10px; /* Menos padding */
+    }
+
+    .code-header {
+        gap: 4px; /* Menos espacio entre los puntos */
+    }
+
+    .code-header .dot {
+        width: 8px; /* Puntos más pequeños */
+        height: 8px;
+    }
+}
+
+/* Móviles pequeños */
+@media screen and (max-width: 480px) {
+    .hero-vid-box {
+        padding: 0 3px; /* Padding más pequeño */
+    }
+
+    .code-window {
+        font-size: 4px; /* Fuente muy pequeña */
+        padding: 4px; /* Menos padding */
+    }
+
+    pre {
+        font-size: 4px; /* Fuente en pre también reducida */
+        white-space: pre-wrap;
+        word-break: break-word;
+    }
+
+    .code-header {
+        gap: 3px; /* Menos espacio entre los puntos */
+    }
+
+    .code-header .dot {
+        width: 6px; /* Puntos más pequeños */
+        height: 6px;
+    }
+}
+
+/* Ajustes para pantallas medianas entre 1200px y 1398px */
+@media screen and (max-width: 1398px) {
+    .hero-vid-box {
+        position: static;
+        width: auto;
+        max-width: 1000px;
+        margin: 0 auto;
+        box-sizing: border-box;
+        padding: 0 30px;
+    }
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
 /* Responsivo: Ajustes para pantallas pequeñas */
 @media screen and (max-width: 1398px) {
     .hero {
@@ -422,8 +496,7 @@ pre {
         margin-top: 5%;
     }
 
-    .hero-info,
-    .hero-vid-box {
+    .hero-info {
         position: static;
         width: 100%;
         max-width: 1000px;
@@ -433,13 +506,15 @@ pre {
     }
 
     .hero-info {
-        text-align: left;
+        text-align: center;
     }
 
     .hero-info-title {
         display: inline-flex;
-        justify-content: center; /* Centrar el contenido del botón */
-        width: auto; /* No ocupar todo el ancho */
+        justify-content: center;
+        /* Centrar el contenido del botón */
+        width: auto;
+        /* No ocupar todo el ancho */
     }
 
     .hero-info h1 {
@@ -459,24 +534,31 @@ pre {
 
     /* Responsivo para el botón en pantallas pequeñas */
     .cv-button {
-        width: auto; /* Hacer que el ancho se ajuste al contenido */
-        padding: 8px 16px; /* Ajustar padding */
+        width: auto;
+        /* Hacer que el ancho se ajuste al contenido */
+        padding: 8px 16px;
+        /* Ajustar padding */
     }
 }
 
 @media screen and (max-width: 768px) {
     .hero-info-title {
-        font-size: 12px; /* Ajustar el tamaño del texto para pantallas más pequeñas */
-        padding: 6px 12px; /* Ajustar padding */
+        font-size: 12px;
+        /* Ajustar el tamaño del texto para pantallas más pequeñas */
+        padding: 6px 12px;
+        /* Ajustar padding */
     }
 
     .hero-info-title i {
-        font-size: 16px; /* Reducir tamaño del ícono */
+        font-size: 16px;
+        /* Reducir tamaño del ícono */
     }
 
     .cv-button {
-        font-size: 12px; /* Ajustar tamaño del texto del botón */
-        padding: 6px 12px; /* Reducir padding */
+        font-size: 12px;
+        /* Ajustar tamaño del texto del botón */
+        padding: 6px 12px;
+        /* Reducir padding */
     }
 }
 
@@ -815,6 +897,52 @@ pre {
     filter: grayscale(0);
 }
 
+/* Escritorios grandes (Full HD y superiores) */
+.responsive-slider {
+    --width: 100px;
+    --height: 100px;
+    --quantity: 8;
+}
+
+/* Laptops grandes y medianos */
+@media (max-width: 1200px) {
+    .responsive-slider {
+        --width: 85px;
+        --height: 85px;
+    }
+}
+
+/* Tablets grandes y laptops pequeños */
+@media (max-width: 992px) {
+    .responsive-slider {
+        --width: 70px;
+        --height: 70px;
+    }
+}
+
+/* Tablets pequeños y móviles grandes (tipo iPhone Plus) */
+@media (max-width: 768px) {
+    .responsive-slider {
+        --width: 60px;
+        --height: 60px;
+    }
+}
+
+/* Móviles estándar */
+@media (max-width: 576px) {
+    .responsive-slider {
+        --width: 50px;
+        --height: 50px;
+    }
+}
+
+/* Móviles pequeños o muy compactos (tipo iPhone SE, Android compact) */
+@media (max-width: 400px) {
+    .responsive-slider {
+        --width: 20px;
+        --height: 20px;
+    }
+}
 
 
 
@@ -1060,19 +1188,15 @@ pre {
 
 
 
+
+
 /* Footer Styling */
 .footer {
-    background-color: #1111111c;
-    color: #fff;
-    padding: 30px 20px;
-    text-align: center;
-    font-size: 16px;
-    width: 100%;
-    /* Asegura que el footer ocupe el 100% de ancho */
-    max-width: 1200px;
-    /* Limita el ancho máximo del footer */
     margin: 0 auto;
-    /* Centra el footer si el ancho es menor que el máximo */
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
 }
 
 .footer .footer-content {
@@ -1099,6 +1223,7 @@ pre {
 .footer p {
     margin-bottom: 10px;
 }
+
 
 
 
@@ -1287,12 +1412,45 @@ body.blurred::after {
 
 
 
+/* 📱 MOBILE STYLES */
+@media (max-width: 768px) {
 
 
+    /* Animaciones */
+
+
+    .autoBlur {
+        transition: filter 1s ease, opacity 1s ease;
+        filter: blur(40px);
+        opacity: 0;
+    }
+
+    .autoBlur.visible {
+        filter: blur(0);
+        opacity: 1;
+    }
+
+    .autoDisplay {
+        opacity: 0;
+        filter: blur(18px);
+        transform: translateY(-200px) scale(0);
+        transition: opacity 0.8s ease, filter 0.8s ease, transform 0.8s ease;
+    }
+
+    .autoDisplay.visible {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0) scale(1);
+    }
+
+
+
+
+}
 
 
 @media screen and (max-width: 1000px) {
-    
+
     .section-title {
         font-size: 30px;
     }
@@ -1326,34 +1484,23 @@ body.blurred::after {
         height: 50px;
     }
 
-    header ul {
-        display: none;
-    }
-
-    header .box-icons {
-        display: none;
-    }
-
-    header h1 {
-        font-size: 25px;
-    }
 
     .blackhole-box video {
         margin-top: -16%;
     }
 
-  
+
 
     .autoBlur {
         animation: none;
     }
 
-   
+
     .scroll-down {
         display: none;
     }
 
-   
+
     .my-projects {
         margin-bottom: 600px;
     }
