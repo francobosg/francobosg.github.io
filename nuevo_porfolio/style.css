@@ -1406,45 +1406,47 @@ body.blurred::after {
 
 
 
-.autoBlur,
-.autoDisplay,
-.fadeInRight {
-  will-change: opacity, transform;
-  transform: translateZ(0); /* fuerza capa de composición */
-}
-
-/* Blur + FadeIn seguro */
 .autoBlur {
-  opacity: 0;
-  transition: opacity 1s ease;
+    transition: filter 1s ease, opacity 1s ease;
+    filter: blur(40px);
+    opacity: 0;
 }
 
 .autoBlur.visible {
-  opacity: 1;
+    filter: blur(0);
+    opacity: 1;
 }
 
-/* Entrada vertical + escala */
 .autoDisplay {
-  opacity: 0;
-  transform: translateY(-100px) scale(0.9);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+    opacity: 0;
+    filter: blur(18px);
+    transform: translateY(-100px) scale(0.9);
+    transition:
+        opacity 0.8s ease,
+        filter 0.8s ease,
+        transform 0.8s ease;
 }
 
 .autoDisplay.visible {
-  opacity: 1;
-  transform: translateY(0) scale(1);
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
 }
 
-/* Entrada desde la derecha */
 .fadeInRight {
-  opacity: 0;
-  transform: translateX(100px) scale(0.95);
-  transition: opacity 0.9s ease, transform 0.9s ease;
+    opacity: 0;
+    transform: translateX(100px) scale(0.95);
+    filter: blur(20px);
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s ease,
+        filter 0.9s ease;
 }
 
 .fadeInRight.visible {
-  opacity: 1;
-  transform: translateX(0) scale(1);
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    filter: blur(0);
 }
 
 
@@ -1452,29 +1454,36 @@ body.blurred::after {
 
 
 
-/* VIDEO RESPONSIVE */
-
 @media (max-aspect-ratio: 16/9) {
     .back-vid {
-      width: auto;
-      height: 100%;
+        width: auto;
+        height: 100%;
     }
-  }
-  
-  @media (min-aspect-ratio: 16/9) {
+}
+
+@media (min-aspect-ratio: 16/9) {
     .back-vid {
-      width: 100%;
-      height: auto;
+        width: 100%;
+        height: auto;
     }
-  }
-  
-  /* RESPONSIVE para móviles */
-  
-  @media (max-width: 768px) {
-    .autoDisplay {
-      transform: translateY(-150px) scale(0.85);
-    }
-  }
+}
+
+
+
+
+/* 📱 MOBILE STYLES */
+@media (max-width: 768px) {
+
+
+    /* Animaciones */
+    .autoDisplay, .autoBlur, .fadeInRight {
+        will-change: opacity, transform, filter;
+      }
+      
+
+   
+
+}
 
 
 @media screen and (max-width: 1000px) {
