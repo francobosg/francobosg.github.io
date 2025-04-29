@@ -1405,11 +1405,12 @@ body.blurred::after {
 
 
 
-
+/* Animaciones */
 .autoBlur {
     transition: filter 1s ease, opacity 1s ease;
     filter: blur(40px);
     opacity: 0;
+    will-change: opacity, filter; /* Ayuda en rendimiento */
 }
 
 .autoBlur.visible {
@@ -1425,6 +1426,7 @@ body.blurred::after {
         opacity 0.8s ease,
         filter 0.8s ease,
         transform 0.8s ease;
+    will-change: opacity, filter, transform; /* Mejora rendimiento */
 }
 
 .autoDisplay.visible {
@@ -1441,6 +1443,7 @@ body.blurred::after {
         opacity 0.9s ease,
         transform 0.9s ease,
         filter 0.9s ease;
+    will-change: opacity, transform, filter; /* Mejora rendimiento */
 }
 
 .fadeInRight.visible {
@@ -1449,11 +1452,7 @@ body.blurred::after {
     filter: blur(0);
 }
 
-
-
-
-
-
+/* 🌍 Aspect ratio fixes */
 @media (max-aspect-ratio: 16/9) {
     .back-vid {
         width: auto;
@@ -1468,22 +1467,22 @@ body.blurred::after {
     }
 }
 
-
-
-
 /* 📱 MOBILE STYLES */
 @media (max-width: 768px) {
 
-
     /* Animaciones */
     .autoDisplay, .autoBlur, .fadeInRight {
-        will-change: opacity, transform, filter;
-      }
-      
+        will-change: opacity, transform, filter; /* Mejora rendimiento en dispositivos móviles */
+        backface-visibility: hidden; /* Necesario en Safari y otros navegadores móviles */
+        transform-style: preserve-3d; /* Optimiza la animación en dispositivos móviles */
+    }
 
-   
-
+    /* Ajuste para evitar problemas de renderizado en dispositivos con baja potencia */
+    .autoDisplay.visible, .autoBlur.visible, .fadeInRight.visible {
+        transition: none; /* Eliminar transiciones al entrar en la vista para un rendimiento más rápido */
+    }
 }
+
 
 
 @media screen and (max-width: 1000px) {
