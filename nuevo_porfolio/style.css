@@ -409,55 +409,110 @@ pre {
 
 
 
-
-/* Tablets */
+/* Tablets pequeñas y móviles grandes */
 @media screen and (max-width: 768px) {
-    .hero-vid-box {
-        width: 100%;
-        padding: 0 10px;
-    }
-
     .code-window {
-        font-size: 11px; /* Fuente más pequeña */
-        padding: 10px; /* Menos padding */
+        font-size: 11px;
+        padding: 10px;
     }
 
     .code-header {
-        gap: 4px; /* Menos espacio entre los puntos */
+        gap: 8px;
     }
 
     .code-header .dot {
-        width: 8px; /* Puntos más pequeños */
+        width: 8px;
         height: 8px;
+    }
+
+    pre,
+    code {
+        margin: 0;
+        font-size: 11px;
+        line-height: 1.5;
+        white-space: pre-wrap;
+        word-break: break-word;
+    }
+}
+
+/* Móviles grandes */
+@media screen and (max-width: 640px) {
+    .code-window {
+        font-size: 9.5px;
+        padding: 8px;
+    }
+
+    .code-header {
+        gap: 6px;
+    }
+
+    .code-header .dot {
+        width: 7px;
+        height: 7px;
+    }
+
+    pre,
+    code {
+        font-size: 9.5px;
+        line-height: 1.4;
+    }
+}
+
+/* Móviles medianos */
+@media screen and (max-width: 560px) {
+    .code-window {
+        font-size: 8px;
+        padding: 6px;
+    }
+
+    .code-header {
+        gap: 5px;
+    }
+
+    .code-header .dot {
+        width: 6.5px;
+        height: 6.5px;
+    }
+
+    pre,
+    code {
+        font-size: 8px;
+        line-height: 1.3;
     }
 }
 
 /* Móviles pequeños */
 @media screen and (max-width: 480px) {
     .hero-vid-box {
-        padding: 0 3px; /* Padding más pequeño */
+        padding: 0 3px;
     }
 
     .code-window {
-        font-size: 4px; /* Fuente muy pequeña */
-        padding: 4px; /* Menos padding */
-    }
-
-    pre {
-        font-size: 4px; /* Fuente en pre también reducida */
-        white-space: pre-wrap;
-        word-break: break-word;
+        font-size: 6.5px;
+        padding: 4px;
     }
 
     .code-header {
-        gap: 3px; /* Menos espacio entre los puntos */
+        gap: 3px;
     }
 
     .code-header .dot {
-        width: 6px; /* Puntos más pequeños */
+        width: 6px;
         height: 6px;
     }
+
+    pre,
+    code {
+        font-size: 6.5px;
+        line-height: 1.2;
+        white-space: pre-wrap;
+        word-break: break-word;
+        margin: 0;
+    }
 }
+
+
+
 
 /* Ajustes para pantallas medianas entre 1200px y 1398px */
 @media screen and (max-width: 1398px) {
