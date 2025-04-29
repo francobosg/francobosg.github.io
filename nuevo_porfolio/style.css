@@ -1287,57 +1287,8 @@ body.blurred::after {
 
 
 
-/* 📱 MOBILE STYLES */
-@media (max-width: 768px) {
-   
-
-    /* Animaciones */
-
-    .autoBlur,
-    .autoDisplay,
-    .fadeInRight {
-        will-change: opacity, transform, filter;
-    }
-
-    .autoBlur {
-        transition: filter 1s ease, opacity 1s ease;
-        filter: blur(40px);
-        opacity: 0;
-    }
-
-    .autoBlur.visible {
-        filter: blur(0);
-        opacity: 1;
-    }
-
-    .autoDisplay {
-        opacity: 0;
-        filter: blur(18px);
-        transform: translateY(-200px) scale(0);
-        transition: opacity 0.8s ease, filter 0.8s ease, transform 0.8s ease;
-    }
-
-    .autoDisplay.visible {
-        opacity: 1;
-        filter: blur(0);
-        transform: translateY(0) scale(1);
-    }
-
-    .fadeInRight {
-        opacity: 0;
-        transform: translateX(500px) scale(0.2);
-        filter: blur(20px);
-        transition: opacity 0.9s ease, transform 0.9s ease, filter 0.9s ease;
-    }
-
-    .fadeInRight.visible {
-        opacity: 1;
-        transform: translateX(0) scale(1);
-        filter: blur(0);
-    }
 
 
-}
 
 
 @media screen and (max-width: 1000px) {
