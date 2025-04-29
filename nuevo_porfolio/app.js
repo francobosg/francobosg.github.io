@@ -21,13 +21,16 @@ document.addEventListener("DOMContentLoaded", () => {
   videoList.forEach(video => {
     if (!video) return;
 
-    // Eventos para escritorio
+    // Eventos para escritorio (mouseenter y mouseleave)
     video.addEventListener('mouseenter', () => handleInteraction(video));
     video.addEventListener('mouseleave', () => stopInteraction(video));
 
-    // Eventos para móviles/tablets
+    // Eventos para móviles/tablets (touchstart y touchend)
     video.addEventListener('touchstart', () => handleInteraction(video));
     video.addEventListener('touchend', () => stopInteraction(video));
+
+    // Prevent touch scrolling on video tap to ensure interaction
+    video.addEventListener('touchmove', (e) => e.preventDefault(), { passive: false });
   });
 
   // 📊 Progress bar setup
