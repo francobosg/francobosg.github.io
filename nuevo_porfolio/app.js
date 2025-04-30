@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const isMobileOrTablet = window.innerWidth < 1024;
+
   // 🎥 Video hover/touch effects
   const videoList = [
     document.getElementById('projectVideo1'),
@@ -21,16 +23,19 @@ document.addEventListener("DOMContentLoaded", () => {
   videoList.forEach(video => {
     if (!video) return;
 
-    // Eventos para escritorio (mouseenter y mouseleave)
-    video.addEventListener('mouseenter', () => handleInteraction(video));
-    video.addEventListener('mouseleave', () => stopInteraction(video));
+    // Reproducción automática y configuración del video
+    video.loop = true;
+    video.muted = true;
+    video.playsInline = true;
 
-    // Eventos para móviles/tablets (touchstart y touchend)
-    video.addEventListener('touchstart', () => handleInteraction(video));
-    video.addEventListener('touchend', () => stopInteraction(video));
-
-    // Prevent touch scrolling on video tap to ensure interaction
-    video.addEventListener('touchmove', (e) => e.preventDefault(), { passive: false });
+    if (!isMobileOrTablet) {
+      // Solo para escritorio
+      video.addEventListener('mouseenter', () => handleInteraction(video));
+      video.addEventListener('mouseleave', () => stopInteraction(video));
+    } else {
+      // Opcional: reproducir directamente en móviles/tablets
+      video.play().catch(() => {});
+    }
   });
 
   // 📊 Progress bar setup
@@ -60,22 +65,23 @@ document.addEventListener("DOMContentLoaded", () => {
     hideCookieBanner(true);
   }
 
-  // 👀 IntersectionObserver reusable logic
-  const createObserver = (selector) => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        entry.target.classList.toggle('visible', entry.isIntersecting);
+  // 👀 IntersectionObserver reusable logic (solo en escritorio)
+  if (!isMobileOrTablet) {
+    const createObserver = (selector) => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          entry.target.classList.toggle('visible', entry.isIntersecting);
+        });
+      }, {
+        threshold: 0.2,
+        rootMargin: '0px 0px -10% 0px'
       });
-    }, {
-      threshold: window.innerWidth < 768 ? 0.1 : 0.2,
-      rootMargin: '0px 0px -10% 0px' // Mejora detección en móviles/Safari
-    });
 
-    document.querySelectorAll(selector).forEach(el => observer.observe(el));
-  };
+      document.querySelectorAll(selector).forEach(el => observer.observe(el));
+    };
 
-  // Inicializar observers
-  createObserver('.autoBlur');
-  createObserver('.autoDisplay');
-  createObserver('.fadeInRight');
+    createObserver('.autoBlur');
+    createObserver('.autoDisplay');
+    createObserver('.fadeInRight');
+  }
 });
