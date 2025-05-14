@@ -17,48 +17,86 @@
 </head>
 <style>
   .anuncio {
-  background-color: #007bff;
-  color: white;
-  padding: 20px;
-  border-radius: 12px;
-  margin-bottom: 30px;
-  position: relative;
-  text-align: center;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-}
+    background: linear-gradient(135deg, #4f46e5, #3b82f6);
+    color: white;
+    padding: 30px 20px;
+    border-radius: 16px;
+    margin: 40px auto;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    max-width: 800px;
+    animation: slideDownFade 1s ease-out;
+  }
 
-.anuncio-contenido {
-  max-width: 600px;
-  margin: 0 auto;
-}
+  @keyframes slideDownFade {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
-.anuncio p {
-  margin: 10px 0;
-  font-size: 1.1rem;
-}
+  .anuncio-contenido {
+    max-width: 700px;
+    margin: 0 auto;
+  }
 
-.boton-anuncio {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 12px 20px;
-  background-color: #fff;
-  color: #007bff;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
+  .anuncio strong {
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  }
 
-.boton-anuncio:hover {
-  background-color: #e2e6ea;
-}
+  .anuncio p {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
 
+  .boton-anuncio {
+    display: inline-block;
+    padding: 14px 26px;
+    background: white;
+    color: #3b82f6;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+
+  .boton-anuncio:hover {
+    background-color: #e0e7ff;
+    transform: scale(1.05);
+  }
+
+  .cerrar-anuncio {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+
+  .cerrar-anuncio:hover {
+    transform: scale(1.2);
+  }
 </style>
+
 <section id="portfolio-anuncio" class="anuncio">
   <div class="anuncio-contenido">
     <strong>🚀 ¡Nuevo Portfolio Disponible!</strong>
     <p>Descubre mis últimos proyectos y habilidades en mi nuevo portfolio.</p>
-    <a rel href="https://francobosg.netlify.app/" target="_blank" class="boton-anuncio">Visítalo ahora</a>
+    <a rel="noopener noreferrer" href="https://francobosg.netlify.app/" target="_blank" class="boton-anuncio">Visítalo ahora</a>
     <button class="cerrar-anuncio" onclick="cerrarAnuncio()">✕</button>
   </div>
 </section>
@@ -69,6 +107,7 @@
     anuncio.style.display = 'none';
   }
 </script>
+
 
 
 <body>
