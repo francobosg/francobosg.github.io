@@ -16,6 +16,23 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 
+<section id="portfolio-anuncio" class="anuncio">
+  <div class="anuncio-contenido">
+    <strong>🚀 ¡Nuevo Portfolio Disponible!</strong>
+    <p>Descubre mis últimos proyectos y habilidades en mi nuevo portfolio.</p>
+    <a href="https://francobosg.netlify.app/" target="_blank" class="boton-anuncio">Visítalo ahora</a>
+    <button class="cerrar-anuncio" onclick="cerrarAnuncio()">✕</button>
+  </div>
+</section>
+
+<script>
+  function cerrarAnuncio() {
+    const anuncio = document.getElementById('portfolio-anuncio');
+    anuncio.style.display = 'none';
+  }
+</script>
+
+
 <body>
 
   <header>

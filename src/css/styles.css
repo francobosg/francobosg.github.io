@@ -15,6 +15,55 @@ body {
   transition: background-color 0.3s ease;
 }
 
+.anuncio {
+  background-color: #007bff;
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.anuncio-contenido {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.anuncio p {
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+
+.boton-anuncio {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 20px;
+  background-color: #fff;
+  color: #007bff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.boton-anuncio:hover {
+  background-color: #e2e6ea;
+}
+
+.cerrar-anuncio {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+
 a {
   color: #1f2937;
   text-decoration: none;
