@@ -232,3 +232,46 @@ body {
     text-align: center;
   }
 }
+
+/* Centrar H1 y añadir animación elegante */
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  color: #00b4d8;
+  margin-top: 60px;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Centrar imágenes dentro de contenedores */
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  animation: fadeIn 1.2s ease-out;
+}
+
+/* Animación fadeIn */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Animación fadeInUp */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
