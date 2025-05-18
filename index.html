@@ -18,138 +18,7 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5512343816050239"
      crossorigin="anonymous"></script>
 </head>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@500&display=swap');
 
-  body {
-    background-color: #0f0f0f;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-  }
-
-  .anuncio {
-    background: linear-gradient(135deg, #d0ff00, #ff0055);
-    color: #ffffff;
-    padding: 40px 30px;
-    border-radius: 20px;
-    margin: 50px auto;
-    position: relative;
-    text-align: center;
-    max-width: 900px;
-    box-shadow: 0 0 30px 10px rgba(255, 0, 90, 0.5);
-    animation: slideDownFade 1s ease-out;
-    font-family: 'Orbitron', sans-serif;
-    overflow: hidden;
-  }
-
-  @keyframes slideDownFade {
-    0% {
-      opacity: 0;
-      transform: translateY(-50px) scale(0.9);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-  }
-
-  .anuncio::before {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px);
-    background-size: 40px 40px;
-    animation: moveBg 20s linear infinite;
-    z-index: 0;
-  }
-
-  @keyframes moveBg {
-    0% {
-      transform: translate(0, 0);
-    }
-    100% {
-      transform: translate(100px, 100px);
-    }
-  }
-
-  .anuncio-contenido {
-    position: relative;
-    z-index: 2;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-
-  .anuncio strong {
-    display: block;
-    font-size: 2.8rem;
-    margin-bottom: 20px;
-    color: #fff700;
-    text-shadow: 2px 2px 8px #000;
-    letter-spacing: 2px;
-  }
-
-  .anuncio p {
-    font-size: 1.5rem;
-    margin-bottom: 25px;
-    color: #ffffff;
-    text-shadow: 1px 1px 4px #000;
-  }
-
-  .boton-anuncio {
-    display: inline-block;
-    padding: 16px 32px;
-    background: linear-gradient(45deg, #ffffff, #ffde59);
-    color: #1a1a1a;
-    border-radius: 50px;
-    font-size: 1.3rem;
-    font-weight: 900;
-    text-decoration: none;
-    box-shadow: 0 0 20px #ffffff80;
-    transition: all 0.4s ease;
-    animation: pulse 1.5s infinite;
-  }
-
-  .boton-anuncio:hover {
-    background: linear-gradient(45deg, #ffde59, #fff700);
-    transform: scale(1.1) rotate(-1deg);
-    box-shadow: 0 0 30px #fff700cc;
-  }
-
-  @keyframes pulse {
-    0% {
-      box-shadow: 0 0 10px #fff70066;
-    }
-    50% {
-      box-shadow: 0 0 25px #fff700cc;
-    }
-    100% {
-      box-shadow: 0 0 10px #fff70066;
-    }
-  }
-
-  .cerrar-anuncio {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    background: transparent;
-    border: none;
-    color: white;
-    font-size: 2rem;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 3;
-    text-shadow: 1px 1px 4px #000;
-    transition: transform 0.2s ease;
-  }
-
-  .cerrar-anuncio:hover {
-    transform: scale(1.3) rotate(90deg);
-  }
-</style>
 
 <section id="portfolio-anuncio" class="anuncio">
   <div class="anuncio-contenido">
@@ -173,23 +42,29 @@
 <body>
 
   <header>
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
       <div class="container">
-        <img src="src/img/nav.png" alt="" width="200px" height="20px">
+        <a class="navbar-brand" href="https://francobosg.github.io/">
+          <img src="../../../src/img/nav.png" alt="" width="200px" height="20px">
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
+            <li class="nav-item">
               <a class="nav-link" href="https://francobosg.github.io/">Inicio</a>
             </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="https://francobosg.github.io/sobre-mi/" rel="nofollow">Sobre mí</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://francobosg.github.io/contacto/">Contacto</a>
+           
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="ejerciciosDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Ejercicios
+              </a>
+              <div class="dropdown-menu" aria-labelledby="ejerciciosDropdown">
+                <a class="dropdown-item" href="https://francobosg.github.io/virtualbox/windows/directivas-seguridad-local/">Directivas de seguridad local.</a>
+                <a class="dropdown-item" href="https://francobosg.github.io/virtualbox/windows/instalacion-configuracion-windowServer2019">Instalación y configuración de Windows Server 2019</a>
+              </div>
             </li>
           </ul>
         </div>
@@ -202,9 +77,8 @@
       <div class="container py-4">
         <div class="row">
           <div class="col-lg-8 mx-auto text-center">
-            <h1 class="display-4">Bienvenido a mi portafolio ANTIGUOOOOOOOOOOOOOO</h1>
-            <h2 class="display-4">Esto fue creado para un proyecto académico; como se puede apreciar, no le puse muchas ganas jajaja.</h2>
-            <p class="lead">Soy Fran Cobos, desarrollador web junior con una gran pasión por la programación. Estoy en búsqueda activa de nuevas oportunidades profesionales en el campo del desarrollo web, donde pueda aplicar mis habilidades y seguir aprendiendo.</p>
+            <h1 class="display-4">Bienvenido a mi portafolio ANTIGUO</h1>
+            <p class="lead">Soy Fran Cobos, desarrollador web  con una gran pasión por la programación. Estoy en búsqueda activa de nuevas oportunidades profesionales en el campo del desarrollo web, donde pueda aplicar mis habilidades y seguir aprendiendo.</p>
           </div>
         </div>
 
@@ -216,18 +90,7 @@
           </div>
         </div>
 
-        <div class="row pt-5">
-          <div class="col-lg-10 mx-auto">
-            <h2 class="text-left mb-4">Contacto</h2>
-            <p class="lead">Estoy disponible para nuevas oportunidades. Si estás interesado en colaborar conmigo o tienes alguna pregunta, no dudes en contactarme.</p>
-            <ul class="list-unstyled text-left">
-              <li><strong>Teléfono:</strong> +34 662 08 06 56</li>
-              <li><strong>Correo:</strong> <a href="mailto:francobosg@gmail.com">francobosg@gmail.com</a></li>
-              <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/francobosg" target="_blank">mi perfil de LinkedIn</a></li>
-            </ul>
-          </div>
-        </div>
-
+      
         <div class="row pt-5">
           <div class="col-lg-10 mx-auto">
             <h1 class="text-left mb-4">Virtual Box</h1>

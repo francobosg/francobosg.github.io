@@ -3,64 +3,173 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: #ffffff !important;
 }
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(to right, #f0f4f8, #d9e2ec);
-  color: #333;
+  background: linear-gradient(135deg, #000002, #0e1a47);
+  color: rgb(255, 255, 255);
   min-height: 100vh;
   line-height: 1.6;
-  padding-top: 120px; /* Para evitar que el navbar cubra el contenido */
+  padding-top: 120px;
   transition: background-color 0.3s ease;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow-x: hidden; /* Añadido para evitar el scroll horizontal */
 }
 
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: moveBg 20s linear infinite;
+  z-index: -1;
+}
+
+@keyframes moveBg {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(100px, 100px);
+  }
+}
+
+section.container,
+.anuncio,
+nav,
+.cookie-banner {
+  position: relative;
+  z-index: 1;
+}
 .anuncio {
-  background-color: #007bff;
-  color: white;
-  padding: 20px;
-  border-radius: 12px;
-  margin-bottom: 30px;
+  background: linear-gradient(135deg, #1e3a8a, #0e1a47);
+  color: #ffffff;
+  padding: 40px 30px;
+  border-radius: 20px;
+  margin: 50px auto;
   position: relative;
   text-align: center;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  max-width: 900px;
+  box-shadow: 0 0 30px 10px rgba(30, 58, 138, 0.5);
+  animation: slideDownFade 1s ease-out;
+  overflow: hidden;
+  margin-top: 100px;
+
+}
+
+@keyframes slideDownFade {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.anuncio::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: moveBg 20s linear infinite;
+  z-index: 0;
+}
+
+@keyframes moveBg {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(100px, 100px);
+  }
 }
 
 .anuncio-contenido {
-  max-width: 600px;
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
   margin: 0 auto;
 }
 
+.anuncio strong {
+  display: block;
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  color: #00b4d8;
+  text-shadow: 2px 2px 8px #000;
+  letter-spacing: 2px;
+}
+
 .anuncio p {
-  margin: 10px 0;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+  color: #ffffff;
+  text-shadow: 1px 1px 4px #000;
 }
 
 .boton-anuncio {
   display: inline-block;
-  margin-top: 10px;
-  padding: 12px 20px;
-  background-color: #fff;
-  color: #007bff;
-  border-radius: 8px;
+  padding: 16px 32px;
+  background: linear-gradient(45deg, #00b4d8, #00e2a6);
+  color: #1a1a1a;
+  border-radius: 50px;
+  font-size: 1.3rem;
+  font-weight: 900;
   text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
+  box-shadow: 0 0 20px #00b4d880;
+  transition: all 0.4s ease;
+  animation: pulse 1.5s infinite;
 }
 
 .boton-anuncio:hover {
-  background-color: #e2e6ea;
+  background: linear-gradient(45deg, #00e2a6, #00b4d8);
+  transform: scale(1.1) rotate(-1deg);
+  box-shadow: 0 0 30px #00b4d8cc;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 10px #00b4d866;
+  }
+  50% {
+    box-shadow: 0 0 25px #00b4d8cc;
+  }
+  100% {
+    box-shadow: 0 0 10px #00b4d866;
+  }
 }
 
 .cerrar-anuncio {
   position: absolute;
-  top: 10px;
-  right: 15px;
+  top: 15px;
+  right: 20px;
   background: transparent;
   border: none;
   color: white;
-  font-size: 1.2rem;
+  font-size: 2rem;
+  font-weight: bold;
   cursor: pointer;
+  z-index: 3;
+  text-shadow: 1px 1px 4px #000;
+  transition: transform 0.2s ease;
+}
+
+.cerrar-anuncio:hover {
+  transform: scale(1.3) rotate(90deg);
 }
 
 
@@ -104,7 +213,7 @@ a:hover {
 .lead {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #333;
+  color: #f1f1f1;
   margin-bottom: 1rem;
   animation: fadeInUp 1s ease-out;
 }
@@ -235,9 +344,9 @@ button:hover {
 
 /* Mejorar visibilidad de textos en secciones con fondo claro */
 section .text-white, .lead, h1, h2, p {
-  color: #333 !important; /* Asegura que el texto sea visible sobre el fondo claro */
+  color: #f1f1f1 !important; /* Asegura que el texto sea visible sobre el fondo claro */
 }
 
 section .text-left, ul {
-  color: #333 !important;
+  color: #f1f1f1 !important;
 }
