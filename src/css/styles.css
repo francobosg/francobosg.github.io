@@ -278,45 +278,51 @@ code {
   }
 }
 
-/* Cookie banner */
 .cookie-banner {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: aliceblue;
-  padding: 15px 20px;
+  background-color: #0f1a2b;
+  padding: 10px;
   text-align: center;
-  color: #fff;
-  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
-  z-index: 999;
-  animation: fadeInUp 1s ease-out;
+  color: #cfd8dc;
 }
 
 .cookie-banner p {
   margin: 0;
   font-size: 14px;
+  line-height: 1.5;
 }
 
 .cookie-banner a {
-  color: #93c5fd;
-  text-decoration: underline;
-}
-
-.cookie-banner button {
-  background-color: #3b82f6;
-  border: none;
-  color: white;
-  padding: 8px 14px;
-  font-size: 14px;
-  cursor: pointer;
-  border-radius: 4px;
-  margin-left: 10px;
-  transition: background-color 0.3s ease;
+  color: #00b4d8;
 }
 
 .cookie-banner button:hover {
-  background-color: #2563eb;
+  color: rgb(13, 71, 161);
+}
+
+.cookie-banner button {
+  background-color: #00b4d8;
+  border: none;
+  color: #fff;
+  padding: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.bg-scroll {
+  transition: background-color 0.3s ease-in-out;
+}
+
+.bg-scroll.scrolled {
+  background-color: rgba(255, 255, 255, 0.644);
+}
+
+
+.text-small {
+  font-size: 0.9rem !important;
 }
 
 /* Section Animations */
