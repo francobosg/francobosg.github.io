@@ -3,7 +3,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: #ffffff !important;
 }
 
 body {
@@ -174,7 +173,7 @@ nav,
 
 
 a {
-  color: #1f2937;
+  color: #ffffff;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -231,46 +230,51 @@ code {
   font-family: 'Courier New', Courier, monospace;
 }
 
-/* Navbar Styling */
+
+/* Navbar Styles */
 .navbar {
-  background-color: #2e3b4e !important;
-  padding: 18px 0;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease-in-out;
+  background-color: #0d2538; /* Azul oscuro */
+  padding: 15px 0;
 }
 
-.navbar-brand img {
-  max-height: 40px;
+.navbar-toggler {
+  border-color: #00b4d8; /* Color del ícono de toggle */
 }
 
-.navbar-nav .nav-item .nav-link {
-  color: #fff !important;
-  font-weight: 500;
+.navbar-toggler-icon {
+  background-color: #00b4d8; /* Color del ícono de toggle */
+}
+
+.nav-link {
+  color: #e0e0e0 !important; /* Color de texto de los links */
+  font-size: 1.1rem;
   text-transform: uppercase;
-  padding: 12px 20px;
-  transition: all 0.3s ease;
+  padding: 10px 15px;
+  transition: color 0.3s ease-in-out;
 }
 
-.navbar-nav .nav-item .nav-link:hover {
-  color: #f4f7fa !important;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 5px;
-  animation: bounce 1s infinite;
+.nav-link:hover {
+  color: #00b4d8 !important; /* Color cuando el link está en hover */
+  text-decoration: underline;
 }
 
-/* Navbar Responsive adjustments */
-@media (max-width: 767px) {
-  .navbar-nav .nav-item .nav-link {
-    font-size: 0.95rem;
-    padding: 10px 12px;
-  }
+.nav-item.active .nav-link {
+  color: #00b4d8 !important; /* Color del link activo */
+  font-weight: bold;
+}
 
-  .navbar-nav .navbar-toggler {
-    border: 1px solid #f4f7fa;
-  }
+.navbar-light .navbar-nav .nav-link {
+  color: #ffffff !important; /* Asegurar que los links sean blancos por defecto */
+}
 
-  .navbar-brand img {
-    max-height: 30px;
+.bg-dark {
+  background-color: #0d2538 !important; /* Color de fondo de la navbar */
+}
+
+/* Asegura que la navbar se vea bien en dispositivos móviles */
+@media (max-width: 992px) {
+  .navbar-nav {
+    text-align: center;
   }
 }
 
