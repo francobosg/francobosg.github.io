@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="robots" content="index, follow" />
+		<meta name="author" content="Fran Cobos Gracia" />
+		<meta name="description" content="Web donde encontrarás ejercicios resueltos del los cursos DAW, DAM, ASIR y SMR" />
+		<meta name="keywords" content="Windows, Server 2019, Instalación Windows Server 2019, Directivas Seguridad Local, Fran Cobos Gracia, Fran Cobos, Fran, VirtualBox" />
+	  
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5512343816050239" crossorigin="anonymous"></script>
+	  
+		<title>Instalación y configuración de Windows Server 2019</title>
+		<link rel="icon" href="assets/images/favicon.png" />
+	  
+		<!-- Estilos principales Phantom -->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	  
+		<!-- Estilos personalizados -->
+		<link rel="stylesheet" href="assets/css/articles.css" />
+		
+	  </head>
+	  
+
+
+<!-- Cookie Banner -->
+<div class="cookie-banner"
+	style="position: fixed; bottom: 0; left: 0; right: 0; background: #222; color: #fff; padding: 1rem; display: flex; justify-content: space-between; align-items: center; z-index: 9999;">
+	<p style="margin: 0; font-size: 0.9rem;">Utilizamos cookies propias y de terceros para mejorar la experiencia del
+		usuario. Si continúa navegando, consideramos que acepta su uso. <a href="https://policies.google.com/"
+			style="color: #4af;">Más información</a></p>
+	<div style="display: flex; gap: 0.5rem; margin-left: 1rem;">
+		<button id="accept-cookies">Aceptar</button>
+		<button id="reject-cookies">Rechazar</button>
+		<a href="https://francobosg.github.io/politica-cookies/"><button id="read-more">Leer más</button></a>
+	</div>
+</div>
+  
+  
+  <script>
+	const cookieBanner = document.querySelector('.cookie-banner');
+	const acceptBtn = document.querySelector('#accept-cookies');
+	const rejectBtn = document.querySelector('#reject-cookies');
+  
+	function hideCookieBanner() {
+	  localStorage.setItem('cookieConsent', 'true');
+	  cookieBanner.style.display = 'none';
+	}
+  
+	function rejectCookies() {
+	  localStorage.setItem('cookieConsent', 'false');
+	  cookieBanner.style.display = 'none';
+	}
+  
+	acceptBtn.addEventListener('click', hideCookieBanner);
+	rejectBtn.addEventListener('click', rejectCookies);
+  
+	if (localStorage.getItem('cookieConsent') === 'true' || localStorage.getItem('cookieConsent') === 'false') {
+	  cookieBanner.style.display = 'none';
+	}
+  </script>
+  
+  
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+			<!-- Header -->
+		<header id="header">
+			<div class="inner">
+
+			<!-- Logo -->
+			<a href="index.html" class="logo">
+				<span class="symbol"><img src="assets/images/favicon.png" alt="" /></span><span class="title">Fran
+					Cobos</span>
+			</a>
+
+				<!-- Nav -->
+				<nav>
+					<ul>
+						<li><a href="#menu">Menu</a></li>
+					</ul>
+				</nav>
+
+			</div>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<h2>Menu</h2>
+			<ul>
+				<li><a href="index.html">Inicio</a></li>
+				<li><a href="#footer">Contacto</a></li>
+				<li><a href="https://francobosg.netlify.app/">Portfolio Fran Cobos</a></li>
+			</ul>
+		</nav>
+				
+		<aside id="portfolio-banner" class="show-banner">
+			<span class="close-btn" onclick="closeBanner()">&times;</span>
+			<h2>🚀 ¡Explora mi portfolio de desarrollador web!</h2>
+			<p>Proyectos reales, tecnología actual y pasión por el código. ¡No te lo pierdas!</p>
+			<a href="https://francobosg.netlify.app/" target="_blank" class="btn-visit">🔗 Visitar ahora</a>
+			<div class="icon-decor">🌐</div>
+		</aside>
+					  
+					
+					<div id="main">
+						
+						<div class="inner">
+					  
+						  
+						  <nav id="indice">
+							<h2>Índice</h2>
+							<ul>
+							  <li><a href="#creacion-mv">1. Creación de la MV (máquina virtual)</a></li>
+							  <li><a href="#instalacion-windows">2. Instalación de Windows Server 2019</a></li>
+							  <li>
+								<a href="#configuracion-inicial">3. Configuración inicial del servidor</a>
+								<ul>
+								  <li><a href="#configuracion-red">3.1 Configuración de funciones de red</a></li>
+								  <li><a href="#nombre-servidor">3.2 Asignar nombre representativo al servidor</a></li>
+								</ul>
+							  </li>
+							</ul>
+						  </nav>
+						  
+					  
+						  <div id="main-content">
+							<div class="inner">
+							  <h1 class="display-4">Instalación y configuración de Windows Server 2019</h1>
+						  
+							  <div class="py-5">
+								<h2 id="creacion-mv">1.- Creación de la MV (máquina virtual).</h2>
+
+								<p class="lead">
+								  Dentro del software de virtualización crearemos una máquina virtual llamada
+								  <strong>Server2019-fjcg2122</strong>, destinada a la instalación del sistema Windows Server 2019,
+								  cuya versión de evaluación en formato ISO se puede descargar del siguiente enlace.
+								  Asigna los siguientes recursos hardware a la MV:
+								</p>
+								<p class="lead">
+								  Una vez descargada la ISO de Windows Server 2019, nos dirigiremos a nuestra máquina
+								  virtual y le añadimos estas características:
+								</p>
+								<p class="lead">• Un único disco duro virtual con 100 GB de capacidad.</p>
+								<p class="lead">
+								  • Memoria RAM: 2 GB al menos si tu equipo tiene 4 GB (si tienes más RAM, puedes
+								  utilizar más en la MV; se recomienda usar 4 GB en la MV si tienes 8 GB o más en tu
+								  máquina anfitriona).
+								</p>
+								<p class="lead">Seguimos los siguientes pasos:</p>
+						  
+								<img class="img-fluid mb-5" src="src/img/1.JPG" alt="Paso 1 - Crear máquina virtual">
+						  
+								<p class="lead">Añadimos el tamaño de memoria según la que tu equipo pueda soportar.</p>
+								<img class="img-fluid mb-5" src="src/img/2.JPG" alt="Configuración memoria">
+								<img class="img-fluid mb-5" src="src/img/3.JPG" alt="Configuración memoria">
+								<img class="img-fluid mb-5" src="src/img/4.JPG" alt="Configuración memoria">
+								<img class="img-fluid mb-5" src="src/img/5.JPG" alt="Configuración memoria">
+						  
+								<p class="lead">Ingresamos un tamaño de 100 GB para nuestra máquina virtual.</p>
+								<img class="img-fluid mb-5" src="src/img/6.JPG" alt="Configuración disco duro">
+						  
+								<p class="lead">Ya tenemos creada la máquina virtual, le damos a Iniciar.</p>
+								<img class="img-fluid mb-5" src="src/img/7.JPG" alt="Iniciar máquina virtual">
+						  
+								<h2 id="instalacion-windows">2.- Instalación de Windows Server 2019.</h2>
+						  
+								<p class="lead">
+								  Instala Windows Server 2019 teniendo en cuenta que durante su instalación tendrás
+								  que realizar operaciones relativas al particionado del disco duro virtual creando dos
+								  particiones: una partición de 80 GB donde se instalará el sistema y una partición de 20
+								  GB que se utilizará para datos.
+								</p>
+								<p class="lead">Añadimos la ISO de Windows Server 2019.</p>
+								<img class="img-fluid mb-5" src="src/img/8.JPG" alt="Añadir ISO">
+								<img class="img-fluid mb-5" src="src/img/9.JPG" alt="Pantalla instalación">
+								<img class="img-fluid mb-5" src="src/img/10.JPG" alt="Pantalla instalación">
+						  
+								<p class="lead">Escogemos una versión para instalar (la segunda para tener entorno gráfico).</p>
+								<img class="img-fluid mb-5" src="src/img/11.JPG" alt="Seleccionar versión">
+						  
+								<p class="lead">Aceptamos los términos de licencia.</p>
+								<img class="img-fluid mb-5" src="src/img/12.JPG" alt="Términos licencia">
+						  
+								<p class="lead">Elegimos la opción personalizada para realizar las particiones siguientes:</p>
+								<img class="img-fluid mb-5" src="src/img/13.JPG" alt="Particionado">
+						  
+								<p class="lead">Le damos a Nuevo para crear una partición.</p>
+								<img class="img-fluid mb-5" src="src/img/14.JPG" alt="Crear partición">
+						  
+								<p class="lead">
+								  Introducimos 80 GB (80000 MB) para la partición del sistema y dejamos 20 GB para datos.
+								</p>
+								<img class="img-fluid mb-5" src="src/img/15.JPG" alt="Tamaño partición">
+						  
+								<p class="lead">Aceptamos.</p>
+								<img class="img-fluid mb-5" src="src/img/16.JPG" alt="Aceptar partición">
+						  
+								<p class="lead">Podemos observar que las particiones se han creado correctamente.</p>
+								<img class="img-fluid mb-5" src="src/img/17.JPG" alt="Particiones creadas">
+						  
+								<p class="lead">Ya comenzará la instalación de Windows Server 2019.</p>
+								<img class="img-fluid mb-5" src="src/img/18.JPG" alt="Instalación en curso">
+						  
+								<p class="lead">Como clave al usuario Administrador puedes ponerle <code>Ab_12345</code>.</p>
+								<img class="img-fluid mb-5" src="src/img/19.JPG" alt="Clave administrador">
+						  
+								<h2 id="configuracion-inicial">3.- Configuración inicial del servidor.</h2>
+						        <h3 id="configuracion-red">3.1 Configuración de funciones de red</h3>
+
+								<p class="lead">
+								 Configurar las funciones de red. Abre una consola ejecutando CMD y
+								  comprueba ejecutando <code>ipconfig /all</code> la configuración de red actual de la máquina
+								  virtual.
+								</p>
+								<img class="img-fluid mb-5" src="src/img/20.JPG" alt="Configuración red">
+						  
+								<p class="lead">Apaga el servidor y accede en VirtualBox a Máquina &rarr; Configuración… y elige Red.</p>
+								<p class="lead">
+								  Observarás que, si no has cambiado el modo de funcionamiento de la tarjeta de red, esta se encuentra en modo NAT.
+								  En dicha pantalla, elige “Conectado a: Adaptador Puente”.
+								</p>
+								<img class="img-fluid mb-5" src="src/img/21.JPG" alt="Adaptador puente">
+						  
+								<p class="lead">
+								  Arranca la máquina virtual y vuelve a ejecutar CMD e ipconfig /all para comprobar la
+								  configuración de red. Observarás que ha cambiado y que has obtenido una dirección IP
+								  dentro de la red creada por el router al que está conectada la máquina física.
+								  Probablemente tu IP sea del tipo 192.168.0.x o 192.168.1.x.
+								</p>
+								<img class="img-fluid mb-5" src="src/img/22.JPG" alt="Nueva IP">
+						  
+								<p class="lead">
+								  Observando dicha configuración, vamos a hacer que la dirección IP del servidor sea
+								  estática y vamos a asignarle los mismos valores que nos ha dado el servidor DHCP de
+								  nuestra red física.
+								</p>
+								<p class="lead">Para ello realizamos los siguientes pasos:</p>
+						  
+								<p class="lead">
+								  En el menú de contexto que aparece, elegimos Abrir el Centro de redes y recursos
+								  compartidos. (Haz clic derecho sobre el icono marcado)
+								</p>
+								<img class="img-fluid mb-5" src="src/img/23.JPG" alt="Centro redes">
+						  
+								<p class="lead">En el apartado Ethernet haz clic en Cambiar opciones del adaptador.</p>
+								<img class="img-fluid mb-5" src="src/img/24.JPG" alt="Opciones adaptador">
+						  
+								<p class="lead">Haz clic derecho sobre Ethernet, selecciona Propiedades.</p>
+								<img class="img-fluid mb-5" src="src/img/25.JPG" alt="Propiedades Ethernet">
+								<img class="img-fluid mb-5" src="src/img/26.JPG" alt="Configuración IP">
+						  
+								<p class="lead">Añadimos una dirección estática.</p>
+								<img class="img-fluid mb-5" src="src/img/27.JPG" alt="Dirección estática">
+						  
+								<h3 id="nombre-servidor">3.2 Asignar nombre representativo al servidor</h3>
+						  
+								<p class="lead">Debes cambiar el nombre del servidor para que sea <strong>server2019-iniciales_del_alumno</strong>.</p>
+								<p class="lead">Para ello, ve al explorador de archivos, haz clic derecho sobre Este equipo, y selecciona Propiedades.</p>
+								<img class="img-fluid mb-5" src="src/img/28.JPG" alt="Propiedades equipo">
+						  
+								<p class="lead">Haz clic en Cambiar configuración.</p>
+								<img class="img-fluid mb-5" src="src/img/29.JPG" alt="Cambiar configuración">
+						  
+								<p class="lead">En la ventana que aparece, haz clic en Cambiar…</p>
+								<img class="img-fluid mb-5" src="src/img/30.JPG" alt="Cambiar nombre equipo">
+						  
+								<p class="lead">Introduce un nombre para el equipo y acepta.</p>
+								<img class="img-fluid mb-5" src="src/img/31.JPG" alt="Nuevo nombre equipo">
+						  
+								<p class="lead">Para que los cambios tengan efecto, reinicia la máquina.</p>
+								<img class="img-fluid mb-5" src="src/img/32.JPG" alt="Reinicio">
+							  </div>
+							</div>
+						  </div>
+						  
+					  
+						</div>
+					  </div>
+					  
+
+				<!-- Footer -->
+		<footer id="footer">
+			<div class="inner">
+
+				<section id="contacto">
+					<h2>Contacto</h2>
+					<form method="POST" action="https://formspree.io/f/mzzeyjvb">
+					  <div class="fields">
+						<div class="field half">
+						  <input type="text" name="name" id="name" placeholder="Tu nombre" required />
+						</div>
+						<div class="field half">
+						  <input type="email" name="email" id="email" placeholder="Tu correo electrónico" required />
+						</div>
+						<div class="field">
+						  <textarea name="message" id="message" placeholder="Escribe tu mensaje aquí..." rows="5" required></textarea>
+						</div>
+					  </div>
+					  <ul class="actions">
+						<li><input type="submit" value="Enviar mensaje" class="primary" /></li>
+					  </ul>
+					</form>
+				  </section>
+				  
+
+				<section>
+					<h2>Seguirme</h2>
+					<ul class="icons">
+					  <li>
+						<a href="https://www.linkedin.com/in/francobosg/" target="_blank" rel="noopener noreferrer" class="icon brands style2 fa-linkedin">
+						  <span class="label">LinkedIn</span>
+						</a>
+					  </li>
+					  <li>
+						<a href="https://www.credly.com/users/francisco-jose-cobos-de-gracia" target="_blank" rel="noopener noreferrer" class="icon solid style2 fa-certificate">
+						  <span class="label">Credly</span>
+						</a>
+					  </li>
+					 
+					  <li>
+						<a href="https://www.instagram.com/francobosg/" target="_blank" rel="noopener noreferrer" class="icon brands style2 fa-instagram">
+						  <span class="label">Instagram</span>
+						</a>
+					  </li>
+					</ul>
+				  </section>
+				  
+				<ul class="copyright">
+					<li>&copy; Blog Fran Cobos. All rights reserved</li>
+					<li>Porfolio Profesional: <a href="https://francobosg.netlify.app/">Fran Cobos</a></li>
+				</ul>
+			</div>
+		</footer>
+
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

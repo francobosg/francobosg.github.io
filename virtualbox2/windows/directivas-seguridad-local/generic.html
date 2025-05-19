@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="robots" content="index, follow" />
+	<meta name="author" content="Fran Cobos Gracia" />
+	<meta name="description" content="Web donde encontrarás ejercicios resueltos del los cursos DAW, DAM, ASIR y SMR" />
+
+	<meta name="keywords"
+		content="Directivas Seguridad Local Windows Server 2019, Directivas,Directivas Seguridad Local, Windows Server 2019,Fran Cobos Gracia, Fran Cobos, Fran, VirtualBox," />
+
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5512343816050239"
+		crossorigin="anonymous"></script>
+
+		<title>Directivas de seguridad local</title>
+		<link rel="icon" href="assets/images/favicon.png" />
+
+	<!-- Estilos principales Phantom -->
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+	<!-- Estilos personalizados -->
+	<link rel="stylesheet" href="assets/css/articles.css" />
+
+
+</head>
+
+
+<!-- Cookie Banner -->
+<div class="cookie-banner"
+	style="position: fixed; bottom: 0; left: 0; right: 0; background: #222; color: #fff; padding: 1rem; display: flex; justify-content: space-between; align-items: center; z-index: 9999;">
+	<p style="margin: 0; font-size: 0.9rem;">Utilizamos cookies propias y de terceros para mejorar la experiencia del
+		usuario. Si continúa navegando, consideramos que acepta su uso. <a href="https://policies.google.com/"
+			style="color: #4af;">Más información</a></p>
+	<div style="display: flex; gap: 0.5rem; margin-left: 1rem;">
+		<button id="accept-cookies">Aceptar</button>
+		<button id="reject-cookies">Rechazar</button>
+		<a href="https://francobosg.github.io/politica-cookies/"><button id="read-more">Leer más</button></a>
+	</div>
+</div>
+
+
+
+
+<body class="is-preload">
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+	<!-- Header -->
+	<header id="header">
+		<div class="inner">
+
+		<!-- Logo -->
+		<a href="index.html" class="logo">
+			<span class="symbol"><img src="assets/images/favicon.png" alt="" /></span><span class="title">Fran
+				Cobos</span>
+		</a>
+			<!-- Nav -->
+			<nav>
+				<ul>
+					<li><a href="#menu">Menu</a></li>
+				</ul>
+			</nav>
+
+		</div>
+	</header>
+
+	<!-- Menu -->
+	<nav id="menu">
+		<h2>Menu</h2>
+		<ul>
+			<li><a href="index.html">Inicio</a></li>
+			<li><a href="#footer">Contacto</a></li>
+			<li><a href="https://francobosg.netlify.app/">Portfolio Fran Cobos</a></li>
+		</ul>
+	</nav>
+	<aside id="portfolio-banner" class="show-banner">
+		<span class="close-btn" onclick="closeBanner()">&times;</span>
+		<h2>🚀 ¡Explora mi portfolio de desarrollador web!</h2>
+		<p>Proyectos reales, tecnología actual y pasión por el código. ¡No te lo pierdas!</p>
+		<a href="https://francobosg.netlify.app/" target="_blank" class="btn-visit">🔗 Visitar ahora</a>
+		<div class="icon-decor">🌐</div>
+	</aside>
+
+
+		<main id="main">
+			<div class="inner">
+
+
+
+				<!-- ÍNDICE -->
+				<nav id="indice">
+					<h2>Índice</h2>
+					<ul>
+						<li><a href="#directivas-seguridad-local">Directivas de Seguridad Local</a>
+							<ul>
+								<li><a href="#configuracion-contraseñas">Configuración de las directivas de
+										contraseñas</a>
+									<ul>
+										<li><a href="#requisitos-complejidad">1. Requisitos de complejidad</a></li>
+										<li><a href="#historial-contraseñas">2. Historial de contraseñas</a></li>
+										<li><a href="#longitud-minima">3. Longitud mínima de contraseña</a></li>
+										<li><a href="#vigencia-maxima">4. Vigencia máxima de contraseña</a></li>
+										<li><a href="#vigencia-minima">5. Vigencia mínima de contraseña</a></li>
+										<li><a href="#bloqueo-cuenta">6. Directiva de bloqueo de cuenta</a></li>
+									</ul>
+								</li>
+								<li><a href="#bloqueo-cmd">Directiva para impedir el acceso al símbolo del sistema</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+
+				<main id="main-content">
+					<div class="inner">
+						<h1 id="directivas-seguridad-local">Directivas de Seguridad Local</h1>
+
+						<section>
+							<h2 id="configuracion-contraseñas">Configuración de las directivas de contraseñas</h2>
+							<ol>
+								<li>Habilitar los requisitos de contraseña compleja</li>
+								<li>Exigir historial de contraseñas (últimas 5 contraseñas)</li>
+								<li>Establecer longitud mínima de 8 caracteres</li>
+								<li>Establecer vigencia máxima de 30 días</li>
+								<li>Establecer vigencia mínima de 2 días</li>
+								<li>Configurar bloqueo de cuenta tras 3 intentos fallidos (bloqueo de 10 min)</li>
+							</ol>
+							<p>Para comenzar, accede al Editor de directivas de grupo local con <kbd>Windows + R</kbd> y
+								ejecutando <code>gpedit.msc</code>.</p>
+							<img src="src/img/1.JPG" alt="Abrir gpedit.msc" />
+							<p>Después navega a:</p>
+							<ul>
+								<li>Configuración del equipo</li>
+								<li>Configuración de Windows</li>
+								<li>Configuración de seguridad</li>
+								<li>Directivas de cuenta &rarr; Directiva de contraseñas</li>
+							</ul>
+							<img src="src/img/2.JPG" alt="Ruta en directiva de grupo" />
+							<img src="src/img/3.JPG" alt="Directiva de contraseñas" />
+						</section>
+
+						<section>
+							<h3 id="requisitos-complejidad">1. Requisitos de complejidad</h3>
+							<p>Activa la opción <strong>"La contraseña debe cumplir los requisitos de
+									complejidad"</strong>. Esto exige contraseñas con mayúsculas, minúsculas, números y
+								símbolos.</p>
+							<img src="src/img/4.JPG" alt="Activar requisitos de complejidad" />
+						</section>
+
+						<section>
+							<h3 id="historial-contraseñas">2. Historial de contraseñas</h3>
+							<p>Haz clic en <strong>"Exigir historial de contraseñas"</strong> y establece el valor en
+								<strong>5</strong>. Así se evita reutilizar las últimas cinco contraseñas.</p>
+							<img src="src/img/5.JPG" alt="Historial de contraseñas" />
+							<img src="src/img/6.JPG" alt="Aplicar historial" />
+						</section>
+
+						<section>
+							<h3 id="longitud-minima">3. Longitud mínima de contraseña</h3>
+							<p>Configura al menos <strong>8 caracteres</strong> como longitud mínima. Esto mejora
+								notablemente la seguridad.</p>
+							<img src="src/img/7.JPG" alt="Cambiar longitud mínima" />
+							<img src="src/img/8.JPG" alt="Aplicar cambios" />
+						</section>
+
+						<section>
+							<h3 id="vigencia-maxima">4. Vigencia máxima de contraseña</h3>
+							<p>Accede a <strong>"Vigencia máxima de la contraseña"</strong> y configura <strong>30
+									días</strong> como límite. Así se obliga a los usuarios a renovarla mensualmente.
+							</p>
+							<img src="src/img/9.JPG" alt="Editar vigencia máxima" />
+							<img src="src/img/10.JPG" alt="Aplicar cambios" />
+						</section>
+
+						<section>
+							<h3 id="vigencia-minima">5. Vigencia mínima de contraseña</h3>
+							<p>Esta opción impide que una contraseña recién establecida se cambie antes de cierto
+								tiempo. Establece <strong>2 días</strong> como mínimo.</p>
+							<img src="src/img/11.JPG" alt="Editar vigencia mínima" />
+							<img src="src/img/12.JPG" alt="Aplicar cambios" />
+						</section>
+
+						<section>
+							<h3 id="bloqueo-cuenta">6. Directiva de bloqueo de cuenta</h3>
+							<p>Ve a <strong>Directiva de bloqueo de cuenta</strong>. Configura:</p>
+							<ul>
+								<li><strong>Umbral de bloqueo:</strong> 3 intentos fallidos</li>
+								<li><strong>Duración del bloqueo:</strong> 10 minutos</li>
+							</ul>
+							<img src="src/img/13.JPG" alt="Umbral de bloqueo" />
+							<img src="src/img/14.JPG" alt="Confirmar bloqueo" />
+							<img src="src/img/15.JPG" alt="Duración del bloqueo" />
+							<img src="src/img/16.JPG" alt="Aplicar bloqueo" />
+						</section>
+
+						<section>
+							<h2 id="bloqueo-cmd">Directiva para impedir el acceso al símbolo del sistema</h2>
+							<p>Para evitar que los usuarios accedan a la consola CMD:</p>
+							<ol>
+								<li>Abre el Editor de directivas de grupo local</li>
+								<li>Ve a <strong>Configuración de usuario &rarr; Plantillas administrativas &rarr;
+										Sistema</strong></li>
+								<li>Haz clic en <strong>Impedir el acceso al símbolo del sistema</strong></li>
+							</ol>
+							<img src="src/img/17.JPG" alt="Bloquear acceso al CMD" />
+
+							<p>Activa la directiva y marca <strong>Sí</strong> en el procesamiento de scripts del cmd.
+							</p>
+							<img src="https://francobosg.github.io/virtualbox/windows/instalacion-configuracion-windowServer2019/src/img/2.JPG"
+								alt="Habilitar bloqueo CMD" class="img-center" />
+
+							<p>Guarda los cambios.</p>
+						</section>
+					</div>
+				</main>
+			</div>
+		</main>
+
+
+		<!-- Footer -->
+		<footer id="footer">
+			<div class="inner">
+
+				<section id="contacto">
+					<h2>Contacto</h2>
+					<form method="POST" action="https://formspree.io/f/mzzeyjvb">
+					  <div class="fields">
+						<div class="field half">
+						  <input type="text" name="name" id="name" placeholder="Tu nombre" required />
+						</div>
+						<div class="field half">
+						  <input type="email" name="email" id="email" placeholder="Tu correo electrónico" required />
+						</div>
+						<div class="field">
+						  <textarea name="message" id="message" placeholder="Escribe tu mensaje aquí..." rows="5" required></textarea>
+						</div>
+					  </div>
+					  <ul class="actions">
+						<li><input type="submit" value="Enviar mensaje" class="primary" /></li>
+					  </ul>
+					</form>
+				  </section>
+				  
+
+				<section>
+					<h2>Seguirme</h2>
+					<ul class="icons">
+					  <li>
+						<a href="https://www.linkedin.com/in/francobosg/" target="_blank" rel="noopener noreferrer" class="icon brands style2 fa-linkedin">
+						  <span class="label">LinkedIn</span>
+						</a>
+					  </li>
+					  <li>
+						<a href="https://www.credly.com/users/francisco-jose-cobos-de-gracia" target="_blank" rel="noopener noreferrer" class="icon solid style2 fa-certificate">
+						  <span class="label">Credly</span>
+						</a>
+					  </li>
+					 
+					  <li>
+						<a href="https://www.instagram.com/francobosg/" target="_blank" rel="noopener noreferrer" class="icon brands style2 fa-instagram">
+						  <span class="label">Instagram</span>
+						</a>
+					  </li>
+					</ul>
+				  </section>
+				  
+				<ul class="copyright">
+					<li>&copy; Blog Fran Cobos. All rights reserved</li>
+					<li>Porfolio Profesional: <a href="https://francobosg.netlify.app/">Fran Cobos</a></li>
+				</ul>
+			</div>
+		</footer>
+
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="assets/js/cookie.js"></script>
+
+
+
+</body>
+
+</html>
