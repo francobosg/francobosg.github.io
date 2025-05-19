@@ -2,294 +2,293 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="index, follow">
-  <meta name="author" content="Fran Cobos Gracia">
-  <meta name="description"
-    content="Web donde encontrarás ejercicios resueltos del curso de Desarrollo de aplicaciones Web">
-  <meta name="keywords"
-    content="Directivas Seguridad Local Windows Server 2019, Directivas,Directivas Seguridad Local, Windows Server 2019,Fran Cobos Gracia, Fran Cobos, Fran, VirtualBox,">
-   
-   
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5512343816050239"
-     crossorigin="anonymous"></script>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="robots" content="index, follow" />
+	<meta name="author" content="Fran Cobos Gracia" />
+	<meta name="description" content="Web donde encontrarás ejercicios resueltos del los cursos DAW, DAM, ASIR y SMR" />
 
-  <title>Directivas de seguridad local</title>
-  <link rel='icon' href='../../../src/img/favicon.png' />
-  <link rel='stylesheet' href='src/css/styles.css' />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<meta name="keywords"
+		content="Directivas Seguridad Local Windows Server 2019, Directivas,Directivas Seguridad Local, Windows Server 2019,Fran Cobos Gracia, Fran Cobos, Fran, VirtualBox," />
+
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5512343816050239"
+		crossorigin="anonymous"></script>
+
+		<title>Directivas de seguridad local</title>
+		<link rel="icon" href="../../../assets/images/favicon.png" />
+
+	<!-- Estilos principales Phantom -->
+	<link rel="stylesheet" href="../../../assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="../../../assets/css/noscript.css" /></noscript>
+
+	<!-- Estilos personalizados -->
+	<link rel="stylesheet" href="../../../assets/css/articles.css" />
+
+
 </head>
 
 
-<section id="portfolio-anuncio" class="anuncio">
-  <div class="anuncio-contenido">
-    <strong>🚀 ¡Nuevo Portfolio!</strong>
-    <p>Descubre mis últimos proyectos y habilidades en un diseño impresionante.</p>
-    <a rel="noopener noreferrer" href="https://francobosg.netlify.app/" target="_blank" class="boton-anuncio">⚡ Visítalo Ahora ⚡</a>
-    <button class="cerrar-anuncio" onclick="cerrarAnuncio()">✕</button>
-  </div>
-</section>
-
-<script>
-  function cerrarAnuncio() {
-    const anuncio = document.getElementById('portfolio-anuncio');
-    anuncio.style.display = 'none';
-  }
-</script>
+<!-- Cookie Banner -->
+<div class="cookie-banner"
+	style="position: fixed; bottom: 0; left: 0; right: 0; background: #222; color: #fff; padding: 1rem; display: flex; justify-content: space-between; align-items: center; z-index: 9999;">
+	<p style="margin: 0; font-size: 0.9rem;">Utilizamos cookies propias y de terceros para mejorar la experiencia del
+		usuario. Si continúa navegando, consideramos que acepta su uso. <a href="https://policies.google.com/"
+			style="color: #4af;">Más información</a></p>
+	<div style="display: flex; gap: 0.5rem; margin-left: 1rem;">
+		<button id="accept-cookies">Aceptar</button>
+		<button id="reject-cookies">Rechazar</button>
+		<a href="https://francobosg.github.io/politica-cookies/"><button id="read-more">Leer más</button></a>
+	</div>
+</div>
 
 
-<body>
-  
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
-    <div class="container">
-      <a class="navbar-brand" href="https://francobosg.github.io/">
-        <img src="../../../src/img/nav.png" alt="" width="200px" height="20px">
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="https://francobosg.github.io/">Inicio</a>
-          </li>
-        
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="ejerciciosDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Ejercicios
-            </a>
-            <div class="dropdown-menu" aria-labelledby="ejerciciosDropdown">
-              <a class="dropdown-item" href="https://francobosg.github.io/virtualbox/windows/directivas-seguridad-local/">Directivas de seguridad local.</a>
-              <a class="dropdown-item" href="https://francobosg.github.io/virtualbox/windows/instalacion-configuracion-windowServer2019">Instalación y configuración de Windows Server 2019</a>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  
-  
-  
-
-   
-  <section class="container">
-    <article class="pt-5 text-white">
-      <div class="py-5 mt-5">
-        <h1 class="display-4"> Directivas de seguridad local </h1>
-      </div>
-
-      <div class="py-5">
-        <h2> Realiza las siguientes configuraciones de seguridad en a las directivas de
-          contraseñas: </h2>
-
-        <p class="lead">1.- Habilita los requisitos de contraseña compleja.
-        </p>
-
-        <p class="lead">2.- Exige el historial de contraseñas (que recuerde las últimas 5 contraseñas)
-        </p>
-
-        <p class="lead">3.- Establece la longitud mínima de las contraseñas a 8 caracteres.
-        </p>
-
-        <p class="lead">4.- Establece una vigencia máxima de 30 días para las contraseñas.
-        </p>
-
-        <p class="lead">5.- Establece como vigencia mínima de la contraseña 2 días. Explica en el
-          documento que entregues, qué implica esta vigencia mínima.
-        </p>
-
-        <p class="lead">6.- En las directivas de bloqueo de cuenta, establece que se permitan hasta 3
-          equivocaciones de un usuario al iniciar sesión, y que en el caso de producirse la
-          cuenta del usuario quede bloqueada durante 10 minutos.</p>
-        <p class="lead">En primer lugar, tenemos que ir al Editor de directivas de grupo local. Para ello basta
-          con pulsar la combinación de teclas Windows+R y ejecutar gpedit.msc. </p>
-
-        <img class="img-fluid  mb-5" src="src/img/1.JPG" alt="">
-        <p class="lead">Cuando nos encontremos dentro hay que ir a Configuración del equipo, Configuración
-          de Windows, Configuración de seguridad y Directivas de cuenta. Tenemos que abrir
-          esta carpeta y nos aparecerán otras. La que nos interesa es la de Directiva de
-          contraseñas</p>
-        <img class="img-fluid  mb-5" src="src/img/2.JPG" alt="">
-        <br>
-        <img class="img-fluid  mb-5" src="src/img/3.JPG" alt="">
 
 
-        <p class="lead">1.- Habilita los requisitos de contraseña compleja.
-        </p>
+<body class="is-preload">
+	<!-- Wrapper -->
+	<div id="wrapper">
 
-        <p class="lead">En primer lugar, debemos activar la característica “La contraseña debe cumplir los
-          requisitos de complejidad”. De forma predeterminada vendrá deshabilitada.
-          Básicamente es lo que va a permitir que la nueva contraseña que creemos, o al cambiar
-          una clave ya existente, cumpla con los requisitos como la longitud o el uso de letras
-          mayúsculas y minúsculas, números y otros caracteres.</p>
-        <img class="img-fluid  mb-5" src="src/img/4.JPG" alt="">
+	<!-- Header -->
+	<header id="header">
+		<div class="inner">
 
-        <p class="lead">Estos últimos parámetros que mencionamos es lo que va a otorgar realmente
-          complejidad a una clave de acceso. No debemos crear una que solo tenga letras o
-          incluso letras y números; lo ideal es que también cuente con algún símbolo adicional,
-          como por ejemplo “%”, “&”, “$”…</p>
+		<!-- Logo -->
+		<a href="https://francobosg.github.io/" class="logo">
+			<span class="symbol"><img src="../../../assets/images/favicon.png" alt="" /></span><span class="title">Fran
+				Cobos</span>
+		</a>
+			<!-- Nav -->
+			<nav>
+				<ul>
+					<li><a href="#menu">Menu</a></li>
+				</ul>
+			</nav>
 
-        <p class="lead">2.- Exige el historial de contraseñas (que recuerde las últimas 5 contraseñas)
-        </p>
+		</div>
+	</header>
 
-        <p class="lead">Esto es interesante para asegurarnos de crear contraseñas únicas y que no se repitan.
-        </p>
-
-        <p class="lead">Al exigir historial de contraseñas, Windows no nos va a dejar poner una clave que ya
-          pusimos anteriormente. De forma predeterminada no guardará las contraseñas, pero
-          podemos ponerle un número para que sí lo haga. </p>
-
-        <p class="lead">Para ello, hacemos click sobre Exigir historial de contraseñas
-        </p>
-        <img class="img-fluid  mb-5" src="src/img/5.JPG" alt="">
-
-        <p class="lead">Por ejemplo “5” y que recuerde las últimas 5 claves que hemos puesto.
-        </p>
-
-        <p class="lead">Aplicamos los cambios y Guardamos</p>
-        <img class="img-fluid  mb-5" src="src/img/6.JPG" alt="">
-
-
-        <p class="lead">3.- Establece la longitud mínima de las contraseñas a 8 caracteres.
-        </p>
-        <p class="lead">Simplemente con añadir una letra, un número o un símbolo más a una clave, vamos a
-          lograr que sea mucho más segura. Por tanto, la cantidad que pongamos va a ser
-          esencial.
-        </p>
-        <p class="lead">Cuando activamos los requisitos de complejidad, automáticamente la longitud mínima
-          de esa contraseña pasa a ser de 6. No podríamos, por ejemplo, crear una contraseña
-          que tuviera solo 5 caracteres. En ese caso se consideraría insegura y no nos dejaría.</p>
-        <p class="lead">Ahora bien, 6 sigue siendo una cifra muy baja. Lo ideal es que tenga al menos 10-12
-          caracteres. Podemos configurarlo de esta forma y que nos exija contraseñas que sean
-          más largas y podamos estar más seguros.
-        </p>
-        <p class="lead">Para ello hacemos click en Longitud mínima de la contraseña.
-        </p>
-        <img class="img-fluid  mb-5" src="src/img/7.JPG" alt="">
-
-        <p class="lead">Introducimos que la longitud mínima sea de 8 caracteres.
-        </p>
-        <p class="lead">Aplicamos los cambios y guardamos.</p>
-        <img class="img-fluid  mb-5" src="src/img/8.JPG" alt="">
-
-        <p class="lead">4.- Establece una vigencia máxima de 30 días para las contraseñas.
-        </p>
-        <p class="lead">Asignar una vigencia máxima significa que vamos a tener que cambiar la clave antes de
-          esa fecha. Por ejemplo, si ponemos 30 días o si dejamos los 42 días que vienen
-          predeterminados, una vez pase ese tiempo Windows nos exigirá poner otra contraseña
-          y evitaremos estar usando siempre la misma.</p>
-        <p class="lead">Para ello hacemos click en Vigencia máxima de la contraseña.
-        </p>
-        <img class="img-fluid  mb-5" src="src/img/9.JPG" alt="">
-
-        <p class="lead">Introducimos que sea 30 días de vigencia máxima.
-        </p>
-        <p class="lead">Aplicamos los cambios y guardamos.</p>
-        <img class="img-fluid  mb-5" src="src/img/10.JPG" alt="">
-
-        <p class="lead">5.- Establece como vigencia mínima de la contraseña 2 días. Explica en el
-          documento que entregues, qué implica esta vigencia mínima.
-        </p>
-        <p class="lead">En el caso de la vigencia mínima, esto significa que es el tiempo mínimo que va a estar
-          vigente una clave que hemos creado. De esta forma evitaremos cambiar de contraseña
-          antes de esa fecha. No obstante, esto lo ideal es mantenerlo a 0 y que nos permita
-          cambiarla tantas veces como queramos, ya que no es un problema</p>
-        <p class="lead">Para ello hacemos click en Vigencia mínima de la contraseña.
-        </p>
-        <img class="img-fluid  mb-5" src="src/img/11.JPG" alt="">
-        <p class="lead">Introducimos que sea 2 días de vigencia mínima.
-        </p>
-        <p class="lead">Aplicamos los cambios y guardamos.</p>
-        <img class="img-fluid  mb-5" src="src/img/12.JPG" alt="">
-
-        <p class="lead">6.- En las directivas de bloqueo de cuenta, establece que se permitan hasta 3
-          equivocaciones de un usuario al iniciar sesión, y que en el caso de producirse la
-          cuenta del usuario quede bloqueada durante 10 minutos.</p>
-        <p class="lead">Para ello nos dirigiremos al apartado de Directiva de bloqueo de cuenta, y primero
-          haremos click en Umbral de bloqueo de cuenta para asignarle 3 equivocaciones al
-          usuario.</p>
-        <img class="img-fluid  mb-5" src="src/img/13.JPG" alt="">
-        <br>
-        <img class="img-fluid  mb-5" src="src/img/14.JPG" alt="">
-
-        <p class="lead">Ahora le damos a Duración del bloqueo de cuenta para asignarle que que en el caso de
-          producirse la cuenta del usuario quede bloqueada durante 10 minutos</p>
-        <img class="img-fluid  mb-5" src="src/img/15.JPG" alt="">
-        <br>
-        <img class="img-fluid  mb-5" src="src/img/16.JPG" alt="">
-
-        <p class="lead">5.- Directivas de grupo local.
-        </p>
-        <p class="lead">Impediremos el acceso de los usuarios al símbolo del sistema editando las
-          directivas de grupo. </p>
-        <p class="lead">Para evitar el acceso al Símbolo del sistema en Windows, utilizamos la configuración de
-          la directiva de grupo o editar el Registro de Windows para desactivar el Símbolo del
-          sistema. Al hacer esto, evitará que los usuarios ejecuten la línea de comandos
-          interactiva o CMD.exe. </p>
-        <p class="lead">Para ello nos vamos al Editor de directivas de grupo local como en el anterior ejercicio,
-          y ahora de Configuración de usuario, Plantillas administrativas, Sistema podemos
-          observar que hay una opción llamada Impedir el acceso al símbolo del sistema,
-          hacemos click</p>
-        <img class="img-fluid  mb-5" src="src/img/17.JPG" alt="">
+	<!-- Menu -->
+	<nav id="menu">
+		<h2>Menu</h2>
+		<ul>
+			<li><a href="https://francobosg.github.io/">Inicio</a></li>
+			<li><a href="#footer">Contacto</a></li>
+			<li><a href="https://francobosg.netlify.app/">Portfolio Fran Cobos</a></li>
+		</ul>
+	</nav>
+	<aside id="portfolio-banner" class="show-banner">
+		<span class="close-btn" onclick="closeBanner()">&times;</span>
+		<h2>🚀 ¡Explora mi portfolio de desarrollador web!</h2>
+		<p>Proyectos reales, tecnología actual y pasión por el código. ¡No te lo pierdas!</p>
+		<a href="https://francobosg.netlify.app/" target="_blank" class="btn-visit">🔗 Visitar ahora</a>
+		<div class="icon-decor">🌐</div>
+	</aside>
 
 
-        <p class="lead">Habilitamos y le decimos que Si al procesamiento de scripts del cmd.
-        </p>
-        <img class="img-fluid  mb-5" src="src/img/18.JPG" alt="">
-
-        <p class="lead">Aplicamos los cambios y aceptamos</p>
-      </div>
-    </article>
-  </section>
-  
-  <div class="cookie-banner">
-    <p>Utilizamos cookies propias y de terceros para mejorar la experiencia del usuario. Si continúa navegando,
-      consideramos que acepta su uso. <a href="https://policies.google.com/">Más información</a></p>
-    <button id="accept-cookies">Aceptar</button>
-    <button id="reject-cookies">Rechazar</button>
-        <a href="https://francobosg.github.io/politica-cookies/"><button id="read-more">Leer más</button></a>
-
-  </div>
-
-  <script>
-    const cookieBanner = document.querySelector('.cookie-banner');
-    const acceptBtn = document.querySelector('#accept-cookies');
-    const rejectBtn = document.querySelector('#reject-cookies');
-    const readMoreBtn = document.querySelector('#read-more');
-
-    function hideCookieBanner() {
-      localStorage.setItem('cookieConsent', 'true');
-      cookieBanner.style.display = 'none';
-    }
-
-    function rejectCookies() {
-      localStorage.setItem('cookieConsent', 'false');
-      cookieBanner.style.display = 'none';
-    }
-
-    acceptBtn.addEventListener('click', hideCookieBanner);
+		<main id="main">
+			<div class="inner">
 
 
-    rejectBtn.addEventListener('click', rejectCookies);
 
-    if (localStorage.getItem('cookieConsent') === 'true') {
-      cookieBanner.style.display = 'none';
-    }
-  </script>
+				<!-- ÍNDICE -->
+				<nav id="indice">
+					<h2>Índice</h2>
+					<ul>
+						<li><a href="#directivas-seguridad-local">Directivas de Seguridad Local</a>
+							<ul>
+								<li><a href="#configuracion-contraseñas">Configuración de las directivas de
+										contraseñas</a>
+									<ul>
+										<li><a href="#requisitos-complejidad">1. Requisitos de complejidad</a></li>
+										<li><a href="#historial-contraseñas">2. Historial de contraseñas</a></li>
+										<li><a href="#longitud-minima">3. Longitud mínima de contraseña</a></li>
+										<li><a href="#vigencia-maxima">4. Vigencia máxima de contraseña</a></li>
+										<li><a href="#vigencia-minima">5. Vigencia mínima de contraseña</a></li>
+										<li><a href="#bloqueo-cuenta">6. Directiva de bloqueo de cuenta</a></li>
+									</ul>
+								</li>
+								<li><a href="#bloqueo-cmd">Directiva para impedir el acceso al símbolo del sistema</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+
+				<main id="main-content">
+					<div class="inner">
+						<h1 id="directivas-seguridad-local">Directivas de Seguridad Local</h1>
+
+						<section>
+							<h2 id="configuracion-contraseñas">Configuración de las directivas de contraseñas</h2>
+							<ol>
+								<li>Habilitar los requisitos de contraseña compleja</li>
+								<li>Exigir historial de contraseñas (últimas 5 contraseñas)</li>
+								<li>Establecer longitud mínima de 8 caracteres</li>
+								<li>Establecer vigencia máxima de 30 días</li>
+								<li>Establecer vigencia mínima de 2 días</li>
+								<li>Configurar bloqueo de cuenta tras 3 intentos fallidos (bloqueo de 10 min)</li>
+							</ol>
+							<p>Para comenzar, accede al Editor de directivas de grupo local con <kbd>Windows + R</kbd> y
+								ejecutando <code>gpedit.msc</code>.</p>
+							<img src="src/img/1.JPG" alt="Abrir gpedit.msc" />
+							<p>Después navega a:</p>
+							<ul>
+								<li>Configuración del equipo</li>
+								<li>Configuración de Windows</li>
+								<li>Configuración de seguridad</li>
+								<li>Directivas de cuenta &rarr; Directiva de contraseñas</li>
+							</ul>
+							<img src="src/img/2.JPG" alt="Ruta en directiva de grupo" />
+							<img src="src/img/3.JPG" alt="Directiva de contraseñas" />
+						</section>
+
+						<section>
+							<h3 id="requisitos-complejidad">1. Requisitos de complejidad</h3>
+							<p>Activa la opción <strong>"La contraseña debe cumplir los requisitos de
+									complejidad"</strong>. Esto exige contraseñas con mayúsculas, minúsculas, números y
+								símbolos.</p>
+							<img src="src/img/4.JPG" alt="Activar requisitos de complejidad" />
+						</section>
+
+						<section>
+							<h3 id="historial-contraseñas">2. Historial de contraseñas</h3>
+							<p>Haz clic en <strong>"Exigir historial de contraseñas"</strong> y establece el valor en
+								<strong>5</strong>. Así se evita reutilizar las últimas cinco contraseñas.</p>
+							<img src="src/img/5.JPG" alt="Historial de contraseñas" />
+							<img src="src/img/6.JPG" alt="Aplicar historial" />
+						</section>
+
+						<section>
+							<h3 id="longitud-minima">3. Longitud mínima de contraseña</h3>
+							<p>Configura al menos <strong>8 caracteres</strong> como longitud mínima. Esto mejora
+								notablemente la seguridad.</p>
+							<img src="src/img/7.JPG" alt="Cambiar longitud mínima" />
+							<img src="src/img/8.JPG" alt="Aplicar cambios" />
+						</section>
+
+						<section>
+							<h3 id="vigencia-maxima">4. Vigencia máxima de contraseña</h3>
+							<p>Accede a <strong>"Vigencia máxima de la contraseña"</strong> y configura <strong>30
+									días</strong> como límite. Así se obliga a los usuarios a renovarla mensualmente.
+							</p>
+							<img src="src/img/9.JPG" alt="Editar vigencia máxima" />
+							<img src="src/img/10.JPG" alt="Aplicar cambios" />
+						</section>
+
+						<section>
+							<h3 id="vigencia-minima">5. Vigencia mínima de contraseña</h3>
+							<p>Esta opción impide que una contraseña recién establecida se cambie antes de cierto
+								tiempo. Establece <strong>2 días</strong> como mínimo.</p>
+							<img src="src/img/11.JPG" alt="Editar vigencia mínima" />
+							<img src="src/img/12.JPG" alt="Aplicar cambios" />
+						</section>
+
+						<section>
+							<h3 id="bloqueo-cuenta">6. Directiva de bloqueo de cuenta</h3>
+							<p>Ve a <strong>Directiva de bloqueo de cuenta</strong>. Configura:</p>
+							<ul>
+								<li><strong>Umbral de bloqueo:</strong> 3 intentos fallidos</li>
+								<li><strong>Duración del bloqueo:</strong> 10 minutos</li>
+							</ul>
+							<img src="src/img/13.JPG" alt="Umbral de bloqueo" />
+							<img src="src/img/14.JPG" alt="Confirmar bloqueo" />
+							<img src="src/img/15.JPG" alt="Duración del bloqueo" />
+							<img src="src/img/16.JPG" alt="Aplicar bloqueo" />
+						</section>
+
+						<section>
+							<h2 id="bloqueo-cmd">Directiva para impedir el acceso al símbolo del sistema</h2>
+							<p>Para evitar que los usuarios accedan a la consola CMD:</p>
+							<ol>
+								<li>Abre el Editor de directivas de grupo local</li>
+								<li>Ve a <strong>Configuración de usuario &rarr; Plantillas administrativas &rarr;
+										Sistema</strong></li>
+								<li>Haz clic en <strong>Impedir el acceso al símbolo del sistema</strong></li>
+							</ol>
+							<img src="src/img/17.JPG" alt="Bloquear acceso al CMD" />
+
+							<p>Activa la directiva y marca <strong>Sí</strong> en el procesamiento de scripts del cmd.
+							</p>
+							<img src="https://francobosg.github.io/virtualbox/windows/instalacion-configuracion-windowServer2019/src/img/2.JPG"
+								alt="Habilitar bloqueo CMD" class="img-center" />
+
+							<p>Guarda los cambios.</p>
+						</section>
+					</div>
+				</main>
+			</div>
+		</main>
 
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  <script>
-    window.addEventListener('scroll', function () {
-      const navbar = document.querySelector('.bg-scroll');
-      navbar.classList.toggle('scrolled', window.scrollY > 0);
-    });
-  </script>
+		<!-- Footer -->
+		<footer id="footer">
+			<div class="inner">
+
+				<section id="contacto">
+					<h2>Contacto</h2>
+					<form method="POST" action="https://formspree.io/f/mzzeyjvb">
+					  <div class="fields">
+						<div class="field half">
+						  <input type="text" name="name" id="name" placeholder="Tu nombre" required />
+						</div>
+						<div class="field half">
+						  <input type="email" name="email" id="email" placeholder="Tu correo electrónico" required />
+						</div>
+						<div class="field">
+						  <textarea name="message" id="message" placeholder="Escribe tu mensaje aquí..." rows="5" required></textarea>
+						</div>
+					  </div>
+					  <ul class="actions">
+						<li><input type="submit" value="Enviar mensaje" class="primary" /></li>
+					  </ul>
+					</form>
+				  </section>
+				  
+
+				<section>
+					<h2>Seguirme</h2>
+					<ul class="icons">
+					  <li>
+						<a href="https://www.linkedin.com/in/francobosg/" target="_blank" rel="noopener noreferrer" class="icon brands style2 fa-linkedin">
+						  <span class="label">LinkedIn</span>
+						</a>
+					  </li>
+					  <li>
+						<a href="https://www.credly.com/users/francisco-jose-cobos-de-gracia" target="_blank" rel="noopener noreferrer" class="icon solid style2 fa-certificate">
+						  <span class="label">Credly</span>
+						</a>
+					  </li>
+					 
+					  <li>
+						<a href="https://www.instagram.com/francobosg/" target="_blank" rel="noopener noreferrer" class="icon brands style2 fa-instagram">
+						  <span class="label">Instagram</span>
+						</a>
+					  </li>
+					</ul>
+				  </section>
+				  
+				<ul class="copyright">
+					<li>&copy; Blog Fran Cobos. All rights reserved</li>
+					<li>Porfolio Profesional: <a href="https://francobosg.netlify.app/">Fran Cobos</a></li>
+				</ul>
+			</div>
+		</footer>
+
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="../../../assets/js/jquery.min.js"></script>
+	<script src="../../../assets/js/browser.min.js"></script>
+	<script src="../../../assets/js/breakpoints.min.js"></script>
+	<script src="../../../assets/js/util.js"></script>
+	<script src="../../../assets/js/main.js"></script>
+	<script src="../../../assets/js/cookie.js"></script>
+
+
+
 </body>
 
 </html>
