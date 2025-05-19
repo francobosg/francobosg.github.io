@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap');
+
+/* Fondo con degradado animado */
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(270deg, #FF5C57, #FF9671, #FFC7A9, #FF5C57);
+    background-size: 800% 800%;
+    animation: gradientShift 15s ease infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #eee;
+    text-align: center;
+    padding: 2rem;
+}
+
+@keyframes gradientShift {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+.container {
+    max-width: 500px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 3rem 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    font-size: 9rem;
+    margin: 0;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 0 10px #FF5C57, 0 0 20px #FF5C57;
+    animation: shake 1.5s infinite ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-8px) rotate(-5deg); }
+    50% { transform: translateX(8px) rotate(5deg); }
+    75% { transform: translateX(-8px) rotate(-5deg); }
+}
+
+h2 {
+    margin-top: 0;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #fff;
+    text-shadow: 0 0 8px rgba(0,0,0,0.3);
+}
+
+p {
+    color: #eee;
+    font-size: 1.2rem;
+    margin: 1.5rem 0 2.5rem;
+}
+
+a.btn {
+    display: inline-block;
+    background-color: #fff;
+    color: #FF5C57;
+    font-weight: 700;
+    padding: 0.85rem 2.5rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(255, 92, 87, 0.5);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+a.btn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 92, 87, 0.3);
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    transition: transform 0.5s ease;
+    z-index: 0;
+}
+
+a.btn:hover {
+    color: #fff;
+    background-color: #FF3B33;
+    box-shadow: 0 6px 20px rgba(255, 59, 51, 0.8);
+}
+
+a.btn:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+a.btn span {
+    position: relative;
+    z-index: 1;
+}
