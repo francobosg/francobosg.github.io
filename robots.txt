@@ -1,2 +1,2 @@
 User-agent: *
-Disallow: /politica-cookies/
+Disallow: /contacto/
