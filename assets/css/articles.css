@@ -372,13 +372,14 @@
   font-size: 4.5rem;
   color: #f48fb1;
   position: absolute;
-  top: 16px;
+  bottom: 16px; /* Antes era top */
   right: 24px;
   animation: floatUpDown 3s ease-in-out infinite, spinSlow 12s linear infinite;
   user-select: none;
   pointer-events: none;
   filter: drop-shadow(0 0 5px #f48fb1);
 }
+
 
 
 
