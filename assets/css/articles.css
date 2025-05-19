@@ -380,6 +380,8 @@
   filter: drop-shadow(0 0 5px #f48fb1);
 }
 
+
+
 /* Animaciones icono */
 @keyframes floatUpDown {
   0%, 100% {
@@ -399,49 +401,17 @@
   }
 }
 
-/* RESPONSIVE: Ajustes para móviles con escala progresiva */
+
+/* RESPONSIVE: Ajustes para tablets */
 @media (max-width: 768px) {
   #portfolio-banner {
-    max-width: 90vw;
-    width: 95vw;
-    padding: 2.5rem 2rem;
+    max-width: 95vw;
+    padding: 2rem 1.5rem;
     font-size: 0.9rem;
   }
 
   #portfolio-banner h2 {
-    font-size: 2.2rem;
-  }
-
-  #portfolio-banner p {
-    font-size: 1.1rem;
-  }
-
-  #portfolio-banner .btn-visit {
-    font-size: 1.1rem;
-    padding: 0.8rem 2rem;
-  }
-
-  #portfolio-banner .close-btn {
-    font-size: 24px;
-    top: 12px;
-    right: 12px;
-  }
-
-  #portfolio-banner .icon-decor {
-    font-size: 3rem;
-    top: 12px;
-    right: 12px;
-  }
-}
-
-@media (max-width: 480px) {
-  #portfolio-banner {
-    padding: 2rem 1.2rem;
-    font-size: 0.85rem;
-  }
-
-  #portfolio-banner h2 {
-    font-size: 1.8rem;
+    font-size: 1.9rem;
   }
 
   #portfolio-banner p {
@@ -452,7 +422,70 @@
     font-size: 1rem;
     padding: 0.7rem 1.8rem;
   }
+
+  #portfolio-banner .close-btn {
+    font-size: 22px;
+    top: 10px;
+    right: 10px;
+  }
+
+  #portfolio-banner .icon-decor {
+    font-size: 2.5rem;
+    top: 10px;
+    right: 10px;
+  }
 }
+
+/* RESPONSIVE: Ajustes para móviles pequeños */
+@media (max-width: 480px) {
+  #portfolio-banner {
+    padding: 1.5rem 1rem;
+    top: 15%; /* baja un poco en móviles */
+    font-size: 0.85rem;
+  }
+
+  #portfolio-banner h2 {
+    font-size: 1.6rem;
+  }
+
+  #portfolio-banner p {
+    font-size: 0.95rem;
+  }
+
+  #portfolio-banner .btn-visit {
+    font-size: 0.95rem;
+    padding: 0.6rem 1.5rem;
+  }
+
+  #portfolio-banner .close-btn {
+    font-size: 20px;
+  }
+
+  #portfolio-banner .icon-decor {
+    font-size: 2.2rem;
+  }
+}
+
+/* EXTRA SMALL DEVICES: móviles muy pequeños */
+@media (max-width: 360px) {
+  #portfolio-banner {
+    padding: 1.2rem 0.8rem;
+  }
+
+  #portfolio-banner h2 {
+    font-size: 1.4rem;
+  }
+
+  #portfolio-banner p {
+    font-size: 0.9rem;
+  }
+
+  #portfolio-banner .btn-visit {
+    font-size: 0.9rem;
+    padding: 0.5rem 1.2rem;
+  }
+}
+
 
 
 
