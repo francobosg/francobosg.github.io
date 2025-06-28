@@ -1,0 +1,571 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white; 
+    background-color: #121212; /* Un fondo oscuro para resaltar el texto */
+    transition: background-color 0.3s ease; /* Transición suave de fondo */
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 100px;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro ligeramente transparente */
+    backdrop-filter: blur(8px); /* Difuminar el fondo */
+    transition: background-color 0.3s ease;
+}
+
+.back-vid {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    mix-blend-mode: lighten;
+    transition: opacity 0.3s ease-in-out;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    padding: 0 40px;
+    background: rgba(10, 15, 30, 0.6);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 20px rgba(114, 161, 222, 0.15);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background 0.3s ease;
+}
+
+/* Logo + nombre */
+.left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.left img {
+    width: 48px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.left img:hover {
+    transform: rotate(360deg);
+}
+
+.left h1 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+.left h1 span {
+    color: #72a1de;
+}
+
+header ul {
+    display: flex;
+    gap: 25px;
+    padding: 12px 24px;
+    background: rgba(0, 0, 69, 0.25);
+    border-radius: 50px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 10px rgba(0, 30, 255, 0.3);
+    transition: background 0.3s ease;
+}
+
+header ul li {
+    list-style: none;
+}
+
+header ul a {
+    color: #f1f1f1;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14.5px;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+header ul a:hover {
+    color: #2575fc;
+    transform: scale(1.1);
+}
+
+/* Iconos sociales */
+.box-icons {
+    display: flex;
+    gap: 18px;
+}
+
+.box-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    width: 36px;
+    height: 36px;
+    border: 2px solid #2575fc;
+    color: #ccc;
+    text-decoration: none;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.box-icons a:hover {
+    background-color: #2575fc;
+    color: WHITE;
+    box-shadow: 0 0 12px rgba(114, 127, 222, 0.6);
+    transform: scale(1.1);
+}
+
+.blackhole-box {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    justify-content: center;
+    mix-blend-mode: lighten;
+}
+
+.blackhole-box video {
+    width: 100%;
+    margin-top: -23.5%;
+    animation: fadeIn 3s ease-out infinite;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hero-info-title {
+    display: inline-flex;
+    align-items: center;
+    color: #ffffff;
+    font-size: 14px; /* Reducir tamaño del texto */
+    font-weight: 600;
+    text-decoration: none;
+    padding: 8px 18px; /* Reducir el padding */
+    background: linear-gradient(45deg, #6a11cb, #2575fc); /* Gradiente más suave */
+    border-radius: 25px; /* Bordes redondeados pero más pequeños */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra más sutil */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+
+.hero-info-title i {
+    margin-right: 8px; /* Reducir espacio entre el ícono y el texto */
+    font-size: 20px; /* Reducir tamaño del ícono */
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.hero-info-title:hover {
+    transform: translateY(-3px); /* Movimiento más sutil */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada al hacer hover */
+}
+
+.hero-info-title:hover i {
+    color: #ffcc00; /* Cambiar color del ícono al hacer hover */
+}
+
+/* Eliminar estilo predeterminado de enlace */
+.cv-button:link,
+.cv-button:visited,
+.cv-button:active {
+    text-decoration: none;
+}
+
+.cv-button {
+    display: inline-flex;
+    align-items: center;
+    color: inherit;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px; /* Reducir tamaño del texto del botón */
+    border-radius: 25px;
+    padding: 8px 18px; /* Reducir padding */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cv-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05); /* Efecto de aumento al pasar el ratón */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hero {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-info {
+    position: absolute;
+    left: 5%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.hero-info:hover {
+    transform: translateX(10px);
+}
+
+.hero-info h1 {
+    font-size: 60px;
+    max-width: 600px;
+    font-weight: 700;
+    line-height: 70px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.hero-info p {
+    max-width: 550px;
+    line-height: 25px;
+    margin-bottom: 40px;
+    font-size: 20px;
+}
+
+
+.gradient {
+    background: linear-gradient(to right, #218eb9, #7c1380, #8b1696, #202c88, #3248f0, #1285a1);
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate-gradient 2.5s linear infinite;
+}
+
+@keyframes animate-gradient {
+    to {
+        background-position: 200%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+.hero-vid-box {
+    position: absolute;
+    right: 3%;
+    animation: slideIn 1.5s ease-out;
+}
+
+
+.code-window {
+    background: linear-gradient(135deg, #0f111a1c, #131731bd);
+    border-radius: 16px;
+    padding: 20px;
+    font-family: 'Fira Code', monospace;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    overflow-x: auto;
+    color: #f8f8f2;
+    border: 1px solid #2b2b3a;
+    transition: all 0.3s ease;
+}
+
+.code-window:hover {
+    transform: scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+}
+
+.code-header {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #2a2d3a;
+}
+
+.code-header .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.red {
+    background-color: #ff5f56;
+}
+
+.yellow {
+    background-color: #ffbd2e;
+}
+
+.green {
+    background-color: #27c93f;
+}
+
+pre {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+}
+
+/* Sintaxis destacada */
+.language-js .keyword {
+    color: #ff79c6; /* return, const */
+}
+
+.language-js .string {
+    color: #f1fa8c; /* 'texto' */
+}
+
+.language-js .boolean {
+    color: #8be9fd; /* true, false */
+}
+
+.language-js .function {
+    color: #50fa7b; /* function */
+}
+
+.language-js .number {
+    color: #bd93f9;
+}
+
+.language-js .this {
+    color: #66d9ef;
+}
+
+.scroll-down {
+    height: 50px;
+    width: 30px;
+    border: 2px solid lightgray;
+    position: absolute;
+    left: 49%;
+    bottom: 8%;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(211, 211, 211, 0.425);
+    transition: transform 0.3s ease;
+}
+
+.scroll-down:hover {
+    transform: translateY(-10px);
+}
+
+.scroll-down::before,
+.scroll-down::after {
+    content: "";
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    height: 10px;
+    width: 10px;
+    border: 2px solid lightgray;
+    transform: translate(-50%, -100%) rotate(45deg);
+    border-top: transparent;
+    border-left: transparent;
+    animation: scroll-down 2s ease-in-out infinite;
+}
+
+.scroll-down::before {
+    top: 30%;
+    animation-delay: 0.5s;
+}
+
+@keyframes scroll-down {
+    0% {
+        opacity: 0;
+    }
+
+    30%, 60% {
+        opacity: 1;
+    }
+
+    100% {
+        top: 90%;
+        opacity: 0;
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    .back-vid {
+        width: auto;
+        height: 100%;
+    }
+}
+
+@media (min-aspect-ratio: 16/9) {
+    .back-vid {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+
+
+.info-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin-top: 100px;
+}
+
+.section-title{
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.info-cards{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+    margin-top: 30px;
+}
+
+.card{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    width: auto;
+    height: 40vh;
+    overflow: hidden;
+    border: 1px solid gray;
+    background-color: black;
+    border-radius: 20px;
+}
+
+.card img{
+    width: 80%;
+    height: 50%;
+    object-fit: cover;
+}
+
+.card h1{
+    position: absolute;
+    margin: 0;
+    bottom: 40%;
+    left: 5%;
+    font-size: 25px ;
+    z-index: 1;
+    color: lightgray;
+}
+
+.card p{
+    position: absolute;
+    bottom: 3%;
+    left: 5%;
+    z-index: 1;
+    max-width: 300px;
+    color: gray;
+    font-size: 13px;
+    line-height: 20px;
+
+}
+
+.card video{
+    margin-top: 10%;
+    width: 70%;
+    height: 50%;
+    object-fit: cover;
+    mix-blend-mode: lighten;
+}
+
+
+
+.my-projects{
+    display: flex;
+    flex-direction: column;
+    gap: 10%;
+    align-items: center;
+    position: relative;
+    width: 80%;
+    height: 100vh;
+    margin-top: 200px;
+    margin-bottom: 700px;
+}
+
+.project-card{
+    display: flex;
+    width: 100%;
+    height: 40%;
+    align-items: center;
+    gap: 10%;
+    justify-content: center;
+}
+
+.project-vidbox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    position: relative;
+    cursor: pointer;
+    min-width: 400px;
+    transform: 0.5s;
+    mix-blend-mode: difference;
+}
+
+.project-vidbox video{
+    object-fit: cover;
+    width: 100%;
+    box-shadow: 0 0 10px lightgray;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+.project-vidbox video:hover{
+    box-shadow: 0 0 20px lightgray;
+}
